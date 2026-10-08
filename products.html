@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> -->
+body{margin:0; font-family:Arial, sans-serif;}
+.container{max-width:1180px; margin:auto; padding:20px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:22px; margin-top:25px;}
+.card{background:rgb(252, 248, 248); border-radius:18px; overflow:hidden; border:1px solid #E5E7EB;}
+.card-top{background:#f5f5f7; height:300px; display:flex; align-items:center; justify-content:center; padding:15px; position:relative;}
+.logo-tag{position:absolute; top:12px; left:12px; background:white; padding:6px 10px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+.logo-tag img{height:22px;}
+.card-top .main-img{max-width:100%; max-height:100%; object-fit:contain;}
+.card-bottom{padding:20px 25px 10px 25px; background:white;}
+.card-bottom h3{margin:0; color:#6B7280; font-weight:400; font-size:16px; letter-spacing:3px;}
+.card-bottom h2{margin:4px 0 0 0; color:#0F172A; font-weight:900; font-size:26px;}
+.size-row{display:flex; align-items:center; gap:12px; margin-top:15px;}
+.plus{background:#FF8C00; width:40px; height:40px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:white; font-size:24px; font-weight:bold;}
+.size-row p{margin:0; color:#4B5563; font-size:12px; letter-spacing:1px;}
+.btn-area{padding:0 20px 20px 20px; background:white;}
+.wa-btn{display:block; text-align:center; background:#0B1120; color:white; padding:12px; border-radius:8px; text-decoration:none;font-weight:800; font-size:14px;} 
+
+.big-product-grid{
+  grid-template-columns: 1fr !important;
+  max-width:400px;
+  margin:0 auto;
+}
+
+
+@media (min-width: 768px){
+  .big-product-grid{
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width:1000px !important;
+    gap:25px !important;
+  }
+  .big-product-grid .big-card:nth-child(4){
+    grid-column: 1 / 2;
+    transform: translateX(50%);
+  }
+  .big-product-grid .big-card:nth-child(5){
+    grid-column: 2 / 3;
+    transform: translateX(50%);
+  }
+}
+
+@media (min-width: 768px){
+  .big-product-grid:has(> :nth-child(6)) .big-card:nth-child(4),
+  .big-product-grid:has(> :nth-child(6)) .big-card:nth-child(5){
+    transform: none;
+    grid-column: auto;
+  }
+}
+
+.fix-grid{
+  grid-template-columns:1fr !important;
+  max-width:420px !important;
+  margin:0 auto !important;
+}
+
+@media(min-width:768px){
+  .fix-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+    max-width:1150px !important;
+    gap:28px !important;
+  }
+}
+
+
+
+
+
+    @media (max-width: 768px){
+      section{
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 20px auto !important;
+        border-radius: 16px !important;
+      }
+      .gi-grid{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+      }
+      .gi-grid > div{
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+      }
+      .gi-grid > div:first-child{
+        border-right: none !important;
+        border-bottom: 3px solid #0f172a !important;
+        padding: 10px !important;
+      }
+      .gi-main-img{
+        height: 260px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        display: block !important;
+      }
+      .gi-thumb{
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 12px auto 0 auto !important;
+      }
+      .gi-content{
+        padding: 18px 14px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: left !important;
+      }
+      .gi-content h1, .gi-content p{
+        text-align: left !important;
+      }
+      .gi-content > span{
+        margin: 0 auto !important;
+      }
+    }
+  
+    
+    @media (max-width: 768px){
+      .fittings-grid{
+        grid-template-columns: 1fr !important;
+      }
+      .fittings-grid > div:first-child{
+        border-right: none !important;
+        border-bottom: 2px dashed #e2e8f0 !important;
+        padding: 10px !important;
+      }
+      .fittings-grid > div:first-child img{
+        width: 100% !important;
+        max-height: 320px !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+      .fittings-list{
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+
+      
+    @media (max-width: 768px){
+      .nipples-grid{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+      }
+      .nipples-grid > div{
+        width: 100% !important;
+        margin: 0 auto !important;
+      }
+      .nipples-grid img{
+        height: 240px !important;
+      }
+      .nipples-dual{
+        flex-direction: column !important;
+      }
+      .nipples-dual img{
+        width: 100% !important;
+        height: 220px !important;
+      }
+    }
+
+    @media (max-width: 768px){
+      .gate-grid, .sluice-grid{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+      }
+      .gate-grid > div, .sluice-grid > div{
+        width: 100% !important;
+        border-right: none !important;
+        border-left: none !important;
+      }
+      .gate-grid > div:first-child, .sluice-grid > div:first-child{
+        border-bottom: 3px solid #0f172a !important;
+        padding: 10px !important;
+      }
+      .gate-main-img, .sluice-main-img{
+        height: 300px !important;
+        width: 100% !important;
+      }
+      .gate-thumbs img, .sluice-thumbs img{
+        height: 70px !important;
+      }
+      .gate-content, .sluice-content{
+        padding: 16px !important;
+        width: 100% !important;
+        text-align: left !important;
+      }
+    }
+  
+  
+    @media (max-width: 768px){
+      .nrv-grid, .ball-grid{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+      }
+      .nrv-grid > div, .ball-grid > div{
+        width: 100% !important;
+        border-right: none !important;
+        border-left: none !important;
+      }
+      .nrv-grid > div:first-child, .ball-grid > div:first-child{
+        border-bottom: 3px solid #f1f5f9 !important;
+        padding: 10px !important;
+      }
+      .nrv-main-img, .ball-main-img{
+        height: 300px !important;
+        width: 100% !important;
+      }
+      .nrv-content, .ball-content{
+        padding: 16px !important;
+      }
+      .nrv-thumbs img, .ball-thumbs img{
+        height: 90px !important;
+      }
+    }
+  
+    @media (max-width: 768px){
+      .bolt-grid{
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+      }
+      .bolt-grid > div{
+        width: 100% !important;
+        border-right: none !important;
+      }
+      .bolt-grid > div:first-child{
+        border-bottom: 2px solid #fed7aa !important;
+      }
+      .bolt-img{
+        height: 280px !important;
+        width: 100% !important;
+      }
+      .bolt-header{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      .bolt-footer{
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+    }
+    
+  .tank-section{font-family: 'Segoe UI', sans-serif; padding:15px; background:#f8fafc;}
+  .tank-card{background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08); margin-bottom:20px; border:1px solid #e2e8f0;}
+  .tank-img{width:100%; background:#fff; padding:15px; text-align:center;}
+  .tank-img img{width:100%; max-width:420px; height:auto; object-fit:contain; border-radius:12px;}
+  .tank-content{padding:16px;}
+  .tank-badge{display:inline-block; background:#0ea5e9; color:#fff; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; margin-bottom:8px;}
+  .tank-badge.aqua{background:#f59e0b;}
+  .tank-title{font-size:20px; font-weight:800; margin:0 0 4px 0; color:#0f172a;}
+  .tank-sub{font-size:13px; color:#64748b; margin-bottom:12px; font-weight:600;}
+  .tank-features{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+  .feat{background:#f1f5f9; padding:8px 10px; border-radius:8px; font-size:12px; font-weight:700; color:#334155; text-align:center; border:1px solid #e2e8f0;}
+  .feat.highlight{background:#dcfce7; border-color:#22c55e; color:#166534;}
+  .feat.repair{background:#fef3c7; border-color:#f59e0b; color:#92400e;}
+  .tank-sizes{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+  .size-chip{border:1px solid #cbd5e1; padding:5px 10px; border-radius:20px; font-size:12px; font-weight:700; background:#fff;}
+  .tank-btn{display:block; width:100%; text-align:center; background:#0ea5e9; color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:800; margin-top:14px; font-size:14px;}
+  .tank-btn.aqua-btn{background:#0f172a;}
+  @media(min-width:768px){
+    .tank-container{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1100px; margin:auto;}
+  }
+
+  .pprc-section{font-family:'Segoe UI',sans-serif; padding:15px; background:#f8fafc;}
+  .pprc-card{background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 6px 25px rgba(0,0,0,0.08); border:1px solid #e2e8f0; max-width:1100px; margin:auto;}
+  .pprc-img{width:100%; background:#fff; padding:15px; text-align:center;}
+  .pprc-img img{width:100%; max-width:480px; height:auto; border-radius:12px;}
+  .pprc-content{padding:18px;}
+  .pprc-badge{background:#0ea5e9; color:#fff; padding:5px 12px; border-radius:20px; font-size:12px; font-weight:800; display:inline-block;}
+  .pprc-title{font-size:21px; font-weight:900; margin:10px 0 4px 0; color:#0f172a;}
+  .pprc-sub{font-size:13px; color:#64748b; font-weight:600; margin-bottom:14px;}
+  .pprc-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:12px 0;}
+  .p-feat{background:#f1f5f9; border:1px solid #e2e8f0; padding:8px; border-radius:10px; font-size:12px; font-weight:700; text-align:center;}
+  .p-feat.hi{background:#e0f2fe; color:#0369a1; border-color:#7dd3fc;}
+  .size-box{display:flex; flex-wrap:wrap; gap:6px; margin:12px 0;}
+  .size-chip{background:#fff; border:1px solid #cbd5e1; padding:6px 12px; border-radius:20px; font-size:12px; font-weight:800;}
+  .size-chip.big{background:#0f172a; color:#fff;}
+  .p-btn{display:block; width:100%; text-align:center; background:#0ea5e9; color:#fff; padding:12px; border-radius:10px; text-decoration:none; font-weight:800; margin-top:12px;}
+  @media(min-width:768px){
+    .pprc-card{display:grid; grid-template-columns:1fr 1fr; align-items:center;}
+  }
+  
+
+  .tank-con-sec{font-family:'Segoe UI',sans-serif; padding:15px; background:#f8fafc;}
+  .tank-con-card{background:#fff; border-radius:16px; border:1px solid #e2e8f0; box-shadow:0 4px 15px rgba(0,0,0,0.06); max-width:600px; margin:auto; overflow:hidden;}
+  /* 2 IMAGE EK LINE ME - NORMAL SIZE */
+  .img-row{display:flex; gap:10px; padding:12px; justify-content:center; background:#fff;}
+  .img-box{flex:1; border:1px solid #e2e8f0; border-radius:10px; padding:8px; text-align:center; background:#fff; max-width:50%;}
+  .img-box img{width:100%; height:140px; object-fit:contain; border-radius:6px;}
+  .img-box p{font-size:10px; color:#64748b; margin:6px 0 0 0; font-weight:600;}
+  .con-content{padding:14px;}
+  .con-badge{background:#334155; color:#fff; font-size:11px; padding:4px 10px; border-radius:20px; font-weight:800; display:inline-block;}
+  .con-title{font-size:18px; font-weight:800; margin:8px 0 3px 0; color:#0f172a;}
+  .con-sub{font-size:12px; color:#64748b; margin-bottom:10px;}
+  .con-feat{display:flex; gap:6px; flex-wrap:wrap; margin:8px 0;}
+  .c-feat{font-size:11px; background:#f1f5f9; border:1px solid #e2e8f0; padding:5px 8px; border-radius:15px; font-weight:700;}
+  .c-feat.ss{background:#e0f2fe; color:#0369a1;}
+  .size-line{font-size:11px; margin:10px 0; color:#334155; line-height:1.5;}
+  .con-btn{display:block; background:#0f172a; color:#fff; text-align:center; padding:10px; border-radius:8px; text-decoration:none; font-weight:800; font-size:13px; margin-top:10px;}
+
+
+  
+  .mh-section{font-family:'Segoe UI',sans-serif; padding:12px; background:#f8fafc;}
+  .mh-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:1100px; margin:auto;}
+  @media(min-width:768px){ .mh-grid{grid-template-columns:1fr 1fr 1fr;} }
+  .mh-card{background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.06); position:relative;}
+  .mh-badge{position:absolute; top:6px; left:6px; font-size:9px; font-weight:800; padding:3px 7px; border-radius:10px; z-index:2; color:#fff;}
+  .b-volvo{background:#0ea5e9;} .b-atlas{background:#334155;} .b-prince{background:#f59e0b;} .b-pprc{background:#10b981;}
+  .mh-img{height:160px; background:#fff; display:flex; align-items:center; justify-content:center; padding:8px;}
+  .mh-img img{max-height:145px; max-width:100%; object-fit:contain;}
+  .mh-info{padding:10px;}
+  .mh-title{font-size:12px; font-weight:800; margin:0; color:#0f172a; line-height:1.3;}
+  .mh-sub{font-size:10px; color:#64748b; margin:3px 0;}
+  .mh-sizes{font-size:9px; background:#f1f5f9; padding:4px 6px; border-radius:6px; margin:6px 0; font-weight:600;}
+  .mh-btn{display:block; background:#0f172a; color:#fff; text-align:center; padding:7px; border-radius:8px; text-decoration:none; font-size:11px; font-weight:800; margin-top:6px;}
+  .mh-btn.blue{background:#0ea5e9;}
+
+
+
+</style>
+</head>
+<body>
+    
+    <section id="products">
+          <a href="index.html" style="color:#94A3B8; text-decoration:none; font-size:13px;">← Back to Home</a>
+  <h2 style=" text-align: center;"> <span style="color: coral;">Our Products</span> - HDPE, UPVC, PPRC & GI</h2>
+  <!-- PRODUCTS SECTION WITH SHAPES - JSONZ -->
+<section id="products" style="padding:60px 20px; background:#f8fafc;">
+  <h2 style="text-align:center; font-size:32px; font-weight:800; margin-bottom:40px;">Our Product Range</h2>
+  
+  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; max-width:1100px; margin:0 auto;">
+
+    <!-- 1. HDPE Card -->
+    <div style="background:white; border-radius:20px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.08); text-align:center; border-top:5px solid #2563eb;">
+      <img src="/imagess/logo pe pipes.jpg" style="width:120px; margin:0 auto 15px;">
+      <h3 style="font-weight:800; font-size:20px;">HDPE Pipes</h3>
+      <p style="color:#64748b; font-size:14px; margin:10px 0;">High pressure, blue stripe, 20mm to 630mm</p>
+      <img src="/imagess/hdp1.jpg" style="width:100%; border-radius:12px; margin-top:15px; height:180px; object-fit:cover;">
+    </div>
+
+    <!-- 2. UPVC Card -->
+    <div style="background:white; border-radius:20px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.08); text-align:center; border-top:5px solid #f59e0b;">
+      <div style="width:80px; height:80px; background:#fef3c7; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; font-size:40px;">🟠</div>
+      <h3 style="font-weight:800; font-size:20px;">UPVC Pipes</h3>
+      <p style="color:#64748b; font-size:14px; margin:10px 0;">For water supply & drainage systems</p>
+      <img src="/imagess/upvc p.jpg" style="width:100%; border-radius:12px; margin-top:15px; height:180px; object-fit:cover;">
+    </div>
+
+    <!-- 3. PPRC Card -->
+    <div style="background:white; border-radius:20px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.08); text-align:center; border-top:5px solid #16a34a;">
+      <div style="width:80px; height:80px; background:#dcfce7; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; font-size:40px;">🟢</div>
+      <h3 style="font-weight:800; font-size:20px;">PPRC Pipes</h3>
+      <p style="color:#64748b; font-size:14px; margin:10px 0;">Hot & cold water, green premium quality</p>
+      <img src="/imagess/pprc.jpg" style="width:100%; border-radius:12px; margin-top:15px; height:180px; object-fit:cover;">
+    </div>
+
+  </div>
+</section>
+<h2 style="color:coral; text-align: center;">WATER TANKS</h2>
+
+
+
+<div class="tank-section">
+  <div class="tank-container">
+    
+    <!-- SUPER MASTER -->
+    <div class="tank-card">
+      <div class="tank-img">
+        <img src="/imagess/supermaster.jpg" alt="Super Master Water Tank">
+      </div>
+      <div class="tank-content">
+        <span class="tank-badge">SUPER MASTER</span>
+        <h2 class="tank-title">Super Master Water Tank</h2>
+        <p class="tank-sub">سپر ماسٹر واٹر ٹینک - The Only Food Grade in Gilgit-Baltistan</p>
+        
+        <div class="tank-features">
+          <div class="feat highlight">🛡️ 10 Years Warranty</div>
+          <div class="feat repair">🔧 Repairable Tanki</div>
+          <div class="feat">✅ 100% Food Grade</div>
+          <div class="feat">✅ UV Protected</div>
+          <div class="feat">✅ 3 Layer Strong</div>
+          <div class="feat">✅ Leakage Proof</div>
+        </div>
+
+        <p style="font-size:12px; font-weight:700; margin:10px 0 5px 0; color:#0f172a;">Available Sizes (LTR):</p>
+        <div class="tank-sizes">
+          <span class="size-chip">500L</span>
+          <span class="size-chip">600L</span>
+          <span class="size-chip">800L</span>
+          <span class="size-chip">1000L</span>
+          <span class="size-chip">1200L</span>
+          <span class="size-chip">1800L</span>
+          <span class="size-chip">2000L</span>
+        </div>
+        <a href="tel:03456264638" class="tank-btn">📞 Price Ke Liye Rabta Karein</a>
+      </div>
+    </div>
+
+    <!-- AQUA -->
+    <div class="tank-card">
+      <div class="tank-img">
+        <img src="/imagess/aqua.jpg" alt="Aqua Water Tank">
+      </div>
+      <div class="tank-content">
+        <span class="tank-badge aqua">AQUA ALPINE</span>
+        <h2 class="tank-title">AQUA Roto Mold Tanks</h2>
+        <p class="tank-sub">AQUA Alpine Private Limited - Heavy Duty</p>
+        
+        <div class="tank-features">
+          <div class="feat highlight">🛡️ 10 Years Warranty</div>
+          <div class="feat repair">🔧 Repairable Tanki</div>
+          <div class="feat">✅ Roto Mold Tech</div>
+          <div class="feat">✅ Extra Strong</div>
+          <div class="feat">✅ Long Life</div>
+          <div class="feat">✅ All Weather</div>
+        </div>
+
+        <p style="font-size:12px; font-weight:700; margin:10px 0 5px 0; color:#0f172a;">Available Sizes (LTR):</p>
+        <div class="tank-sizes">
+          <span class="size-chip">500L</span>
+          <span class="size-chip">800L</span>
+          <span class="size-chip">1000L</span>
+          <span class="size-chip">1200L</span>
+          <span class="size-chip">1500L</span>
+          <span class="size-chip">2000L</span>
+          <span class="size-chip">3000L</span>
+        </div>
+        <a href="tel:03456264638" class="tank-btn aqua-btn">📞 Price Ke Liye Rabta Karein</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+  
+</section>
+      <h2 style="color: chocolate; text-align: center;">Conduite Pipes & Fittings</h2>
+<div style="max-width:1150px; margin:40px auto 0; background:#f8fafc; border-radius:20px; padding:30px; border:1px solid #e2e8f0; display:flex; flex-wrap:wrap; gap:30px; align-items:center;">
+
+  <!-- Left Text -->
+  <div style="flex:1; min-width:300px;">
+    <h2 style="font-size:26px; font-weight:900; color:#0f172a; margin-bottom:5px;">
+      <span style="color:#dc2626;">POPULAR</span> <span style="color:#16a34a;">Electrical Conduit Pipes & Fittings</span>
+    </h2>
+    <p style="font-size:14px; font-weight:700; color:#475569; margin-bottom:25px;">PS-1905 Equivalent to BS-6099</p>
+    
+    <h3 style="font-size:20px; font-weight:800; margin-bottom:15px;">Salient Features</h3>
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li style="display:flex; gap:10px; margin-bottom:12px; font-size:15px; color:#334155;">
+        <span style="background:#dcfce7; color:#16a34a; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">✓</span>
+        Prevent Electrical Shocks
+      </li>
+      <li style="display:flex; gap:10px; margin-bottom:12px; font-size:15px; color:#334155;">
+        <span style="background:#dcfce7; color:#16a34a; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">✓</span>
+        High Mechanical Strength
+      </li>
+      <li style="display:flex; gap:10px; margin-bottom:12px; font-size:15px; color:#334155;">
+        <span style="background:#dcfce7; color:#16a34a; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">✓</span>
+        Self Extinguishing
+      </li>
+      <li style="display:flex; gap:10px; margin-bottom:12px; font-size:15px; color:#334155;">
+        <span style="background:#dcfce7; color:#16a34a; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; flex-shrink:0;">✓</span>
+        Heavy Duty & Long Lasting
+      </li>
+    </ul>
+  </div>
+
+  <!-- Right Image - New HD Box -->
+  <div style="flex:1; min-width:320px; background:white; border-radius:15px; padding:20px; text-align:center;">
+    <img src="/imagess/conduite items.jpg" alt="Conduit Box" style="width:100%; max-width:500px; object-fit:contain;">
+  </div>
+  <div class="container">
+
+  <div style="text-align:center; background:white; padding:20px; border-radius:16px; margin-bottom:20px;">
+    <img src="/imagess/hydroplast logo.jpg" style="height:55px;">
+    <h2 style="color:#0B1120; margin:10px 0 0 0;">Official Distributor - JSONZ Trading Gilgit Baltistan</h2>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1. PP Compression -->
+    <div class="card">
+      <div class="card-top">
+        <!-- <div class="logo-tag"><img src="hydroplast-logo.png"></div> -->
+        <img class="main-img" src="/imagess/comp.jpg">
+      </div>
+      <div class="card-bottom">
+        <h3>PP COMPRESSION</h3><h2>FITTINGS</h2>
+        <div class="size-row"><div class="plus">+</div><p>SIZES: (20MM) TO (110MM)</p></div>
+      </div>
+      <div class="btn-area"><a class="wa-btn" href="https://wa.me/03456264638?text=PP Compression rate?">Get Price on WhatsApp</a></div>
+    </div>
+
+    <!-- 2. HDPE 100 -->
+    <div class="card">
+      <div class="card-top">
+        <!-- <div class="logo-tag"><img src="/imagess/hydroplast.jpg"></div> -->
+        <img class="main-img" src="/imagess/hydrop.jpg">
+      </div>
+      <div class="card-bottom">
+        <h3>HDPE 100</h3><h2>PE FITTINGS</h2>
+        <div class="size-row"><div class="plus">+</div><p>SIZES: (63MM) TO (800MM)</p></div>
+      </div>
+      <div class="btn-area"><a class="wa-btn" href="https://wa.me/03456264638?text=HDPE 100 rate?">Get Price on WhatsApp</a></div>
+    </div>
+
+    <!-- 3. UPVC -->
+    <div class="card">
+      <div class="card-top">
+        <!-- <div class="logo-tag"><img src="hydroplast-logo.png"></div> -->
+        <img class="main-img" src="/imagess/hydroplast.jpg">
+      </div>
+      <div class="card-bottom">
+        <h3>UPVC</h3><h2>UPVC FITTINGS</h2>
+        <div class="size-row"><div class="plus">+</div><p>SIZES: 1/2 (20MM) TO 12 (315MM)</p></div>
+      </div>
+      <div class="btn-area"><a class="wa-btn" href="https://wa.me/03456264638?text=UPVC Fitting rate?">Get Price on WhatsApp</a></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+   <section style="text-align:center; background:white; padding:20px; border-radius:16px; margin-bottom:20px; margin-top: 50px;">
+
+  <div class="gi-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:0; background:#f8fafc; width:100%; margin:0 auto;">
+    
+    <div style="background:white; padding:15px; border-right:3px solid #0f172a; box-sizing:border-box; width:100%;">
+      <img class="gi-main-img" src="/imagess/gipipepic.jpg" alt="IIL GI Pipes" style="width:100%; height:380px; object-fit:contain; border-radius:14px; background:white; display:block; margin:0 auto;">
+      <div class="gi-thumb" style="display:flex; gap:10px; margin-top:12px; width:100%; justify-content:center;">
+        <div style="flex:1; max-width:110px; border:2px solid #0f172a; border-radius:8px; overflow:hidden;"><img src="/imagess/gipipe pic2.jpg" style="width:100%; height:70px; object-fit:cover;"></div>
+        <div style="flex:1; max-width:110px; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; opacity:0.7;"><img src="/imagess/gi pipes.jpg" style="width:100%; height:70px; object-fit:cover;"></div>
+        <div style="flex:1; max-width:110px; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; opacity:0.7;"><img src="/imagess/gipipepic.jpg" style="width:100%; height:70px; object-fit:cover;"></div>
+      </div>
+    </div>
+
+    <div class="gi-content" style="padding:28px; box-sizing:border-box; width:100%; margin:0 auto;">
+      <span style="background:#0f172a; color:white; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:800; letter-spacing:1px; display:inline-block;">IIL CERTIFIED - CE APPROVED</span>
+      
+      <h1 style="font-size:26px; font-weight:900; color:#0f172a; margin-top:15px; line-height:1.2;">IIL Galvanized Iron Pipes (GI)</h1>
+      
+      <p style="color:#334155; font-size:14px; line-height:1.7; margin-top:15px;">IIL galvanized (GI) pipes are made from <b>prime quality steel coil</b> and galvanized using the highest quality zinc.</p>
+      <p style="color:#475569; font-size:14px; line-height:1.7; margin-top:10px;">IIL Galvanized Iron (GI) pipes are <b>corrosion and rust resistant</b> pipes that are ideal for the transmission of potable water, natural gas, oil and other fluids. They are also used in fencing, low cost shelters and general fabrication.</p>
+
+      <div style="background:#f1f5f9; border-left:4px solid #0f172a; padding:12px 15px; border-radius:0 12px 12px 0; margin-top:18px; width:100%; box-sizing:border-box;">
+        <p style="font-size:12px; color:#334155; font-weight:600; margin:0;">Standards: BS EN 10255:2004, ASTM A53, ASTM A795, EN39, SLS829:2009</p>
+        <p style="font-size:13px; color:#0f172a; font-weight:800; margin-top:6px;">Available: 15mm (1/2”) to 200mm (8”) | Thickness: 1.80mm to 5.40mm</p>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; justify-content:flex-start;">
+        <span style="background:#dcfce7; color:#166534; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:800;">✓ Rust Proof</span>
+        <span style="background:#dbeafe; color:#1e40af; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:800;">✓ Potable Water</span>
+        <span style="background:#fef3c7; color:#92400e; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:800;">✓ CE Certified</span>
+      </div>
+
+      <a href="https://wa.me/923456264638?text=IIL%20GI%20Pipe%20Rate%20List" style="display:block; width:100%; margin-top:20px; background:#0f172a; color:white; padding:13px 24px; border-radius:10px; text-decoration:none; font-weight:800; font-size:13px; text-align:center; box-sizing:border-box;">Get Price List on WhatsApp</a>
+
+    </div>
+  </div>
+
+</section>
+<!-- JSONZ - GI PIPE NIPPLES STOCK - CLEAN DISPLAY -->
+<section style="max-width:1200px; width:100%; margin:50px auto 20px auto; background:white; padding:20px 14px; border-radius:16px; font-family:Inter, sans-serif; box-sizing:border-box; overflow:hidden;">
+
+
+  
+  <div style="text-align:center; margin-bottom:25px; width:100%;">
+    <h2 style="font-weight:900; font-size:22px; color:#0f172a; margin:0;">GI Pipe Nipples - Full Stock Available</h2>
+    <p style="color:#64748b; margin-top:6px; font-size:13px;">All Sizes: 1/2" to 6" | Ready in Gilgit Store | Juma Khan & Sons</p>
+    <span style="background:#16a34a; color:white; padding:6px 18px; border-radius:20px; font-size:11px; font-weight:800; display:inline-block; margin-top:12px;">ALL SIZES IN STOCK</span>
+  </div>
+
+  <div class="nipples-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:16px; width:100%; margin:0 auto;">
+
+    <!-- Pic 1 -->
+    <div style="background:white; border:3px solid #0f172a; border-radius:18px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.08); width:100%; box-sizing:border-box;">
+      <img src="/imagess/GIpipes nipples.jpeg" style="width:100%; height:300px; object-fit:contain; background:white; padding:10px; box-sizing:border-box;">
+      <div style="padding:12px; text-align:center; border-top:3px solid #0f172a;">
+        <h3 style="font-weight:800; margin:0; font-size:14px;">Complete Rack Display - 1/2" to 4"</h3>
+        <p style="font-size:11px; color:#64748b; margin-top:4px;">Organized Stock - Ready for Sale</p>
+      </div>
+    </div>
+
+    <!-- Pic 2 -->
+    <div style="background:white; border:3px solid #f59e0b; border-radius:18px; overflow:hidden; box-shadow:0 8px 20px rgba(245,158,11,0.2); width:100%; box-sizing:border-box;">
+      <img src="/imagess/pipesniples2.jpeg" style="width:100%; height:300px; object-fit:contain; background:white; padding:10px; box-sizing:border-box;">
+      <div style="padding:12px; text-align:center; background:#fffbeb; border-top:3px solid #f59e0b;">
+        <h3 style="font-weight:800; margin:0; color:#d97706; font-size:14px;">Catalog Style - All Sizes Nipples</h3>
+        <p style="font-size:11px; color:#92400e; margin-top:4px;">Most Selling - Clean Packing</p>
+      </div>
+    </div>
+
+    <!-- Pic 3 -->
+    <div style="background:white; border:3px solid #16a34a; border-radius:18px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.08); width:100%; box-sizing:border-box;">
+      <img src="/imagess/pipenipples3.jpeg" style="width:100%; height:300px; object-fit:contain; background:white; padding:10px; box-sizing:border-box;">
+      <div style="padding:12px; text-align:center; border-top:3px solid #16a34a;">
+        <h3 style="font-weight:800; margin:0; font-size:14px;">Long & Short Nipples Mix</h3>
+        <p style="font-size:11px; color:#64748b; margin-top:4px;">1 inch to 12 inch length</p>
+      </div>
+    </div>
+
+    <!-- Pic 4 & 5 - Full Stock -->
+    <div style="background:white; border:3px solid #0f172a; border-radius:18px; overflow:hidden; width:100%; box-sizing:border-box;">
+      <div class="nipples-dual" style="display:flex; gap:0; background:white; width:100%;">
+        <img src="/imagess/pipenipples4.jpeg" style="width:50%; height:280px; object-fit:contain; padding:6px; box-sizing:border-box;">
+        <img src="/imagess/pipenipples3.jpeg" style="width:50%; height:280px; object-fit:contain; padding:6px; box-sizing:border-box;">
+      </div>
+      <div style="padding:12px; text-align:center; background:#0f172a; color:white;">
+        <h3 style="font-weight:800; margin:0; font-size:14px;">Full Stock View - Gilgit Shop</h3>
+        <p style="font-size:11px; color:#94a3b8; margin-top:4px;">Visit: Juma Khan & Sons - Main Market</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GI FITTINGS - BELOW GI PIPES PORTION -->
+<section style="max-width:1200px; width:95%; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #334155; box-shadow:0 12px 30px rgba(0,0,0,0.08); font-family:Inter, sans-serif; box-sizing:border-box;">
+
+
+  <div style="background:#0f172a; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-weight:900; font-size:16px; margin:0;">GI Fittings - Complete Range</h2>
+    <span style="background:#f59e0b; color:black; padding:5px 12px; border-radius:20px; font-size:10px; font-weight:900;">ALL SIZES STOCK</span>
+  </div>
+
+  <div class="fittings-grid" style="display:grid; grid-template-columns:1fr 1.1fr; gap:0; width:100%;">
+
+    <!-- Left - HD Fittings Image - MOBILE PE UPAR BADA -->
+    <div style="background:white; padding:14px; display:flex; align-items:center; justify-content:center; border-right:2px dashed #e2e8f0; box-sizing:border-box; width:100%;">
+      <img src="/imagess/gifittings.jpg" alt="GI Fittings" style="width:100%; max-height:400px; height:380px; object-fit:contain; display:block; margin:0 auto;">
+    </div>
+
+    <!-- Right -->
+    <div style="padding:16px; background:#f8fafc; box-sizing:border-box; width:100%;">
+      
+      <p style="font-size:13px; color:#475569; line-height:1.6; margin-bottom:14px;">
+        High quality galvanized fittings for IIL GI pipes. Rust proof, heavy duty, long life. 1/2" to 4" all items available at <b>Juma Khan & Sons, Gilgit.</b>
+      </p>
+
+      <div class="fittings-list" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;">
+
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Elbow</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">1/2" - 4"</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Tee</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">1/2" - 4"</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Socket</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">1/2" - 4"</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Union</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">1/2" - 2"</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Nipple</span> <span style="font-size:10px; background:#dcfce7; padding:3px 8px; border-radius:10px; color:#166534;">All Length</span>
+        </div>
+        <div style="background:white; border:2px solid #f59e0b; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Cap / Plug</span> <span style="font-size:10px; background:#fffbeb; padding:3px 8px; border-radius:10px;">1/2" - 4"</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Bush / Reducer</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">All Sizes</span>
+        </div>
+        <div style="background:white; border:2px solid #0f172a; border-radius:12px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;">
+          <span style="font-weight:800; font-size:12px;">GI Bend / Cross</span> <span style="font-size:10px; background:#f1f5f9; padding:3px 8px; border-radius:10px;">1/2" - 4"</span>
+        </div>
+
+      </div>
+
+      <div style="margin-top:14px; background:white; border:2px dashed #16a34a; border-radius:12px; padding:10px; text-align:center; width:100%; box-sizing:border-box;">
+        <p style="font-size:11px; font-weight:800; color:#166534; margin:0;">✓ Original China & Local - Heavy Weight ✓ Leakage Proof Threads</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<h2 style="text-align:center; font-family:Inter, sans-serif; margin-top:30px;">Gate Valves</h2>
+<section style="max-width:1200px; width:95%; margin:20px auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #0f172a; box-shadow:0 12px 30px rgba(0,0,0,0.1); font-family:Inter, sans-serif; box-sizing:border-box;">
+
+
+
+  <div class="gate-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:0; background:#f8fafc; width:100%; margin:0 auto;">
+    
+    <!-- Left - HD Gate Valve Images - MOBILE PE UPAR BADA -->
+    <div style="background:white; padding:15px; border-right:3px solid #0f172a; box-sizing:border-box; width:100%;">
+      <div style="border:3px solid #0f172a; border-radius:14px; overflow:hidden; background:white; position:relative; width:100%;">
+        <img class="gate-main-img" src="/imagess/gatevalve0.jpg" style="width:100%; height:380px; object-fit:contain; background:white; padding:10px; box-sizing:border-box; display:block; margin:0 auto;">
+        <span style="position:absolute; top:12px; right:12px; background:#f59e0b; color:black; padding:5px 12px; border-radius:20px; font-size:11px; font-weight:900;">3/4" SIZE</span>
+      </div>
+      <!-- 3 Thumbs -->
+      <div class="gate-thumbs" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:12px; width:100%;">
+        <div style="border:3px solid #0f172a; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/gatevalve1.jpg" style="width:100%; height:85px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:900; margin:0; padding:5px; background:#0f172a; color:white;">3/4" VALVE</p></div>
+        <div style="border:2px solid #e2e8f0; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/gatevalve2.jpg" style="width:100%; height:85px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:700; margin:0; padding:5px;">SIDE VIEW</p></div>
+        <div style="border:2px solid #e2e8f0; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/gatevalve3.jpg" style="width:100%; height:85px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:700; margin:0; padding:5px;">1-1/2" VALVE</p></div>
+      </div>
+    </div>
+
+    <!-- Right - Content -->
+    <div class="gate-content" style="padding:28px; box-sizing:border-box; width:100%;">
+      <div style="display:flex; gap:8px; align-items:center; margin-bottom:12px; flex-wrap:wrap;">
+        <span style="background:#0f172a; color:white; padding:6px 14px; border-radius:20px; font-size:10px; font-weight:800;">MADE IN GUJRANWALA</span>
+        <span style="background:#16a34a; color:white; padding:6px 12px; border-radius:20px; font-size:10px; font-weight:800;">ANWAR BRAND</span>
+      </div>
+      
+      <h1 style="font-size:22px; font-weight:900; color:#0f172a; line-height:1.2; margin:0;">Anwar's Manual Full Round Gate Valve</h1>
+      
+      <p style="color:#334155; font-size:13px; line-height:1.7; margin-top:14px;">Discover the reliability and durability of <b>Anwar's Manual Full Round Gate Valve.</b> Manufactured in <b>Gujranwala, Pakistan,</b> Anwar has established itself as a trusted brand not only locally but all around, revered for its commitment to quality.</p>
+      <p style="color:#475569; font-size:13px; line-height:1.7; margin-top:10px;">Whether you are looking for a solution for <b>gas, water, or oil applications,</b> this valve guarantees exceptional performance, leakage proof and long life.</p>
+
+      <div style="background:#fffbeb; border-left:4px solid #f59e0b; padding:12px 14px; border-radius:0 12px 12px 0; margin-top:16px; width:100%; box-sizing:border-box;">
+        <p style="font-size:12px; color:#78350f; font-weight:700; margin:0;">✓ 100% Brass Body | ✓ Blue Cast Iron Handle | ✓ Full Round Flow</p>
+        <p style="font-size:12px; color:#0f172a; font-weight:900; margin-top:6px;">Available: 3/4" and 1-1/2" | Stock in Gilgit</p>
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
+        <span style="background:#dcfce7; color:#166534; padding:6px 12px; border-radius:20px; font-size:10px; font-weight:800;">✓ Gas</span>
+        <span style="background:#dbeafe; color:#1e40af; padding:6px 12px; border-radius:20px; font-size:10px; font-weight:800;">✓ Water</span>
+        <span style="background:#fef3c7; color:#92400e; padding:6px 12px; border-radius:20px; font-size:10px; font-weight:800;">✓ Oil</span>
+        <span style="background:#f1f5f9; color:#334155; padding:6px 12px; border-radius:20px; font-size:10px; font-weight:800;">Made in Pakistan</span>
+      </div>
+
+      <a href="https://wa.me/92300XXXXXXX?text=Anwar%20Gate%20Valve%20Price" style="display:block; width:100%; margin-top:18px; background:#0f172a; color:white; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:800; font-size:13px; text-align:center; box-sizing:border-box;">Price on WhatsApp</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- SLUICE VALVES - INDUSTRIAL HEAVY DUTY PORTION -->
+<section style="max-width:1200px; width:95%; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #0f172a; box-shadow:0 12px 30px rgba(0,0,0,0.1); font-family:Inter, sans-serif; box-sizing:border-box;">
+
+  <div style="background:#0f172a; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-size:16px; font-weight:900; margin:0;">SLUICE / FLANGED GATE VALVES - INDUSTRIAL</h2>
+    <span style="background:#f59e0b; color:black; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:900;">HEAVY DUTY</span>
+  </div>
+
+  <div class="sluice-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:0; background:#f8fafc; width:100%;">
+    
+    <!-- Left Images - MOBILE PE UPAR -->
+    <div style="background:white; padding:15px; box-sizing:border-box; width:100%;">
+      <div style="border:3px solid #0f172a; border-radius:14px; overflow:hidden; background:white; width:100%; box-sizing:border-box;">
+        <img class="sluice-main-img" src="/imagess/solovesvalves0.jpg" style="width:100%; height:340px; object-fit:contain; padding:10px; background:white; box-sizing:border-box; display:block; margin:0 auto;">
+      </div>
+      <div class="sluice-thumbs" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; width:100%;">
+        <div style="border:2px solid #0f172a; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/solovesvalves1.jpg" style="width:100%; height:120px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:900; margin:0; padding:5px; background:#0f172a; color:white;">DN80 3" FLANGED</p></div>
+        <div style="border:2px solid #e2e8f0; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/solovesvalves2.jpg" style="width:100%; height:120px; object-fit:cover;"><p style="text-align:center; font-size:10px; font-weight:700; margin:0; padding:5px;">ON SITE USE</p></div>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="sluice-content" style="padding:22px; border-left:3px solid #f1f5f9; box-sizing:border-box; width:100%;">
+        <h2 style="font-size:14px; color:#64748b; margin:0;">Anwar Engineering Works (Industrial Valves)</h2>
+      <h3 style="font-size:20px; font-weight:900; color:#0f172a; margin:6px 0 0 0; line-height:1.2;">Flanged Sluice Gate Valve & Butterfly Valve</h3>
+      
+      <p style="color:#334155; font-size:13px; line-height:1.7; margin-top:12px;">Discover the reliability and durability of <b>Industrial Sluice Valves.</b> Manufactured with <b>cast iron body with blue epoxy coating,</b> these valves are trusted for water supply, fire fighting and gas pipelines.</p>
+      <p style="color:#475569; font-size:13px; line-height:1.7; margin-top:10px;">Whether you are looking for <b>water, oil or gas applications</b> in Gilgit, Hunza, Skardu, this valve guarantees <b>zero leakage, full flow and long life.</b> Flanged type - easy installation.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:16px; width:100%;">
+        <div style="background:#f1f5f9; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#64748b; margin:0; font-weight:700;">SIZE</p><p style="font-size:12px; color:#0f172a; font-weight:900; margin:2px 0 0 0;">DN80 (3") / DN100 / DN150</p></div>
+        <div style="background:#f1f5f9; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#64748b; margin:0; font-weight:700;">TYPE</p><p style="font-size:12px; color:#0f172a; font-weight:900; margin:2px 0 0 0;">Flanged / Butterfly</p></div>
+        <div style="background:#dbeafe; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#1e40af; margin:0; font-weight:700;">MATERIAL</p><p style="font-size:12px; color:#1e3a8a; font-weight:900; margin:2px 0 0 0;">Cast Iron - Blue Coated</p></div>
+        <div style="background:#dcfce7; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#166534; margin:0; font-weight:700;">USE</p><p style="font-size:12px; color:#14532d; font-weight:900; margin:2px 0 0 0;">Water / Gas / Oil</p></div>
+      </div>
+
+      <a href="https://wa.me/92300XXXXXXX?text=Sluice%20Valve%20DN80%20Price" style="display:block; margin-top:16px; background:#0f172a; color:white; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:800; font-size:13px; width:100%; text-align:center; box-sizing:border-box;">Get Sluice Valve Price on WhatsApp</a>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FOOT VALVE + BRASS STRAINER PORTION -->
+<section style="max-width:1200px; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #0f172a; box-shadow:0 12px 30px rgba(0,0,0,0.1); font-family:Inter, sans-serif;">
+  <div style="background:#0f172a; padding:14px 28px;">
+    <h2 style="color:white; font-size:18px; font-weight:900; margin:0;">FOOT VALVE & BRASS Y-STRAINER - WATER PUMP ACCESSORIES</h2>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+    
+    <!-- Foot Valve -->
+    <div style="padding:18px; border-right:2px solid #f1f5f9; background:white;">
+      <div style="border:3px solid #0f172a; border-radius:14px; overflow:hidden; background:white;">
+        <img src="/imagess/footvalve2.jpg" style="width:100%; height:260px; object-fit:contain; padding:12px;">
+      </div>
+      <h3 style="font-size:17px; font-weight:900; color:#0f172a; margin-top:14px;">Brass Foot Valve All Size Available (1" TO 6") </h3>
+      <p style="font-size:13px; color:#475569; line-height:1.6; margin-top:8px;">
+        Discover the reliability of <b>Brass Foot Valve</b> Used at the bottom of suction pipe - prevents water backflow, stops debris. Ideal for water pumps, tube wells, Gilgit water supply.
+      </p>
+      <div style="margin-top:10px;"><span style="background:#fef3c7; color:#92400e; padding:5px 10px; border-radius:20px; font-size:11px; font-weight:800;">✓ With SS Jali</span> <span style="background:#dcfce7; color:#166534; padding:5px 10px; border-radius:20px; font-size:11px; font-weight:800;">✓ Non-Return</span></div>
+    </div>
+
+    <!-- Brass Strainer -->
+    <div style="padding:18px; background:white;">
+      <div style="border:3px solid #e2e8f0; border-radius:14px; overflow:hidden; background:white;">
+        <img src="/imagess/brass strainer.jpg" style="width:100%; height:260px; object-fit:contain; padding:12px;">
+      </div>
+      <h3 style="font-size:17px; font-weight:900; color:#0f172a; margin-top:14px;">Brass Y-Strainer DN25 PN16</h3>
+      <p style="font-size:13px; color:#475569; line-height:1.6; margin-top:8px;">
+        <b>Brass Y-Type Strainer</b> - filters dust and particles from water line. Protects valves, pumps and meters. Made from 100% brass, easy to clean, long life. For water, oil applications.
+      </p>
+      <div style="margin-top:10px;"><span style="background:#dbeafe; color:#1e40af; padding:5px 10px; border-radius:20px; font-size:11px; font-weight:800;">✓ Filter Type</span> <span style="background:#f1f5f9; color:#334155; padding:5px 10px; border-radius:20px; font-size:11px; font-weight:800;">✓ DN25 (1")</span></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- NON-RETURN VALVE (NRV) - CHECK VALVE PORTION -->
+<section style="max-width:1200px; width:95%; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #0f172a; box-shadow:0 12px 30px rgba(0,0,0,0.1); font-family:Inter, sans-serif; box-sizing:border-box;">
+
+
+
+  <div style="background:#0f172a; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-size:14px; font-weight:900; margin:0; line-height:1.3;">NON-RETURN VALVE (NRV) - ONE WAY CHECK VALVE</h2>
+    <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:800;">CHECK VALVE</span>
+  </div>
+
+  <div class="nrv-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:0; background:#f8fafc; width:100%; margin:0 auto;">
+    
+    <!-- Left - HD Images - MOBILE PE UPAR BADA -->
+    <div style="background:white; padding:15px; border-right:3px solid #f1f5f9; box-sizing:border-box; width:100%;">
+      <div style="border:3px solid #0f172a; border-radius:14px; overflow:hidden; background:white; width:100%; box-sizing:border-box;">
+        <img class="nrv-main-img" src="/imagess/nrv3.jpg" style="width:100%; height:320px; object-fit:contain; padding:10px; background:white; display:block; margin:0 auto; box-sizing:border-box;">
+      </div>
+      <div class="nrv-thumbs" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; width:100%;">
+        <div style="border:3px solid #0f172a; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/nrv1.jpg" style="width:100%; height:110px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:900; margin:0; padding:5px; background:#0f172a; color:white;">2" BRASS NRV</p></div>
+        <div style="border:2px solid #e2e8f0; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="imagess/nrv2.jpg" style="width:100%; height:110px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:700; margin:0; padding:5px;">FLANGED NRV</p></div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="nrv-content" style="padding:22px 26px; box-sizing:border-box; width:100%;">
+      <h3 style="font-size:20px; font-weight:900; color:#0f172a; margin:0; line-height:1.2;">Non-Return Valve (NRV)</h3>
+      
+      <p style="color:#334155; font-size:13px; line-height:1.7; margin-top:12px;"><b>Non-return valve</b> is a single-way valve that allows the fluid to flow only in <b>one direction.</b> Main importance of non-return valves is their working of allowing flow in the downstream direction and preventing the flow in the upstream direction.</p>
+      <p style="color:#475569; font-size:12px; line-height:1.7; margin-top:10px;">Non-Return Valves are also known as <b>NRVs.</b> It is usually small, simple. There are various types of non-return valves but the main function is the same. It is also known as <b>one-way valve, check valve, clack valve, reflux valve, or retention valve.</b> It is available in different sizes.</p>
+
+      <div style="background:#f0fdf4; border-left:4px solid #16a34a; padding:12px 14px; border-radius:0 12px 12px 0; margin-top:16px; width:100%; box-sizing:border-box;">
+        <p style="font-size:11px; color:#14532d; font-weight:700; margin:0;">Function: Allows flow one way → Blocks reverse flow</p>
+        <p style="font-size:12px; color:#0f172a; font-weight:900; margin-top:5px;">Sizes: 1/2" to 4" | Brass & CI Flanged</p>
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
+        <span style="background:#fef3c7; color:#92400e; padding:5px 11px; border-radius:20px; font-size:10px; font-weight:800;">One Way</span>
+        <span style="background:#dbeafe; color:#1e40af; padding:5px 11px; border-radius:20px; font-size:10px; font-weight:800;">Check Valve</span>
+        <span style="background:#e0e7ff; color:#3730a3; padding:5px 11px; border-radius:20px; font-size:10px; font-weight:800;">2" & Flanged</span>
+        <span style="background:#f1f5f9; color:#334155; padding:5px 11px; border-radius:20px; font-size:10px; font-weight:800;">No Back Flow</span>
+      </div>
+
+      <a href="https://wa.me/92300XXXXXXX?text=NRV%20Non%20Return%20Valve%20Price" style="display:block; width:100%; margin-top:16px; background:#0f172a; color:white; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:800; font-size:13px; text-align:center; box-sizing:border-box;">Get NRV Price on WhatsApp</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- BALL VALVES PORTION -->
+<section style="max-width:1200px; width:95%; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #0f172a; box-shadow:0 12px 30px rgba(0,0,0,0.1); font-family:Inter, sans-serif; box-sizing:border-box;">
+
+  <div style="background:#0f172a; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-size:14px; font-weight:900; margin:0; line-height:1.3;">BALL VALVES - LEVER OPERATED BRASS VALVE</h2>
+    <span style="background:#f59e0b; color:black; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:900;">QUICK OPEN</span>
+  </div>
+
+  <div class="ball-grid" style="display:grid; grid-template-columns:1.2fr 1fr; gap:0; background:#f8fafc; width:100%; margin:0 auto;">
+    
+    <!-- Left - MOBILE PE UPAR BADA -->
+    <div style="background:white; padding:15px; box-sizing:border-box; width:100%;">
+      <div style="border:3px solid #0f172a; border-radius:14px; overflow:hidden; background:white; width:100%; box-sizing:border-box;">
+        <img class="ball-main-img" src="imagess/ballvalve1.jpg" style="width:100%; height:320px; object-fit:contain; padding:10px; background:white; display:block; margin:0 auto; box-sizing:border-box;">
+      </div>
+      <div class="ball-thumbs" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; width:100%;">
+        <div style="border:2px solid #0f172a; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/ballvalve2.jpg" style="width:100%; height:110px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:900; margin:0; padding:5px; background:#0f172a; color:white;">RED HANDLE</p></div>
+        <div style="border:2px solid #e2e8f0; border-radius:10px; overflow:hidden; background:white; width:100%; box-sizing:border-box;"><img src="/imagess/ballvalve3.jpg" style="width:100%; height:110px; object-fit:contain; padding:5px; box-sizing:border-box;"><p style="text-align:center; font-size:10px; font-weight:700; margin:0; padding:5px;">BLUE - 2 SIZES</p></div>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="ball-content" style="padding:22px 26px; border-left:3px solid #f1f5f9; box-sizing:border-box; width:100%;">
+      <h3 style="font-size:20px; font-weight:900; color:#0f172a; margin:0; line-height:1.2;">Brass Ball Valve DN20 & All Sizes</h3>
+      
+      <p style="color:#334155; font-size:13px; line-height:1.7; margin-top:12px;">Discover the power of <b>Brass Ball Valve</b> with lever handle. A quarter-turn valve that gives you <b>full flow with 90° rotation.</b> Most popular valve for water, gas and oil lines.</p>
+      <p style="color:#475569; font-size:12px; line-height:1.7; margin-top:10px;">Main importance is <b>quick shut-off, leak-proof and long life.</b> It is also known as <b>lever valve, quarter-turn valve.</b> Available in Red, Yellow, Blue handles - DN15 to DN50 (1/2" to 2"). 100% Brass, PN25 pressure rated.</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:16px; width:100%;">
+        <div style="background:#fef3c7; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#92400e; margin:0; font-weight:700;">SIZE</p><p style="font-size:11px; color:#78350f; font-weight:900; margin:2px 0 0 0;">DN20 (1/2") + All Sizes</p></div>
+        <div style="background:#f1f5f9; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#64748b; margin:0; font-weight:700;">OPERATION</p><p style="font-size:11px; color:#0f172a; font-weight:900; margin:2px 0 0 0;">Quarter Turn - Lever</p></div>
+        <div style="background:#dbeafe; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#1e40af; margin:0; font-weight:700;">MATERIAL</p><p style="font-size:11px; color:#1e3a8a; font-weight:900; margin:2px 0 0 0;">100% Brass - PN25</p></div>
+        <div style="background:#dcfce7; border-radius:8px; padding:10px; box-sizing:border-box;"><p style="font-size:9px; color:#166534; margin:0; font-weight:700;">USE</p><p style="font-size:11px; color:#14532d; font-weight:900; margin:2px 0 0 0;">Water / Gas / Oil</p></div>
+      </div>
+
+      <div style="display:flex; gap:6px; margin-top:14px; flex-wrap:wrap;">
+        <span style="background:#0f172a; color:white; padding:5px 10px; border-radius:20px; font-size:10px; font-weight:800;">DN20</span>
+        <span style="background:#f59e0b; color:black; padding:5px 10px; border-radius:20px; font-size:10px; font-weight:800;">Yellow Handle</span>
+        <span style="background:#ef4444; color:white; padding:5px 10px; border-radius:20px; font-size:10px; font-weight:800;">Red Handle</span>
+        <span style="background:#2563eb; color:white; padding:5px 10px; border-radius:20px; font-size:10px; font-weight:800;">Blue Handle</span>
+      </div>
+
+      <a href="https://wa.me/92300XXXXXXX?text=Ball%20Valve%20DN20%20Price" style="display:block; margin-top:14px; background:#0f172a; color:white; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:800; font-size:13px; width:100%; text-align:center; box-sizing:border-box;">Get Ball Valve Price on WhatsApp</a>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- J SONS - WATER TAPS & SAFETY VALVES SECTION -->
+<section style="max-width:1250px; margin:20px auto; font-family:Inter,sans-serif;">
+  <h2 style="text-align:center; font-weight:900; color:#0f172a;">WATER TAPS, SAFETY VALVES & DRAIN JALI</h2>
+  
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:14px; padding:15px;">
+    
+    <!-- Safety -->
+    <div style="border:2px solid #b45309; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/saftyvalve.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">NABIC Safety Valve Brass</b><br><span style="font-size:10px; color:green; font-weight:700;">✓ In Stock - Lever Type</span></div>
+    </div>
+
+    <div style="border:2px solid #b45309; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/saftyvalve2.jpeg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">TUV/CE Safety Valve</b><br><span style="font-size:10px; color:#475569;">For Heating & Cooling</span></div>
+    </div>
+
+    <!-- Taps -->
+    <div style="border:2px solid #0ea5e9; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/watertap3.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">Brass Bib Cock T-Handle</b><br><span style="font-size:10px; color:green; font-weight:700;">✓ In Stock - Heavy Duty</span></div>
+    </div>
+
+    <div style="border:2px solid #0ea5e9; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/watertaplong.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">Long Bib Cock Deluxe</b><br><span style="font-size:10px; color:#475569;">Super Asia Collection</span></div>
+    </div>
+
+    <div style="border:2px solid #0ea5e9; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/watertap1.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">Water Tap Lever Handle</b><br><span style="font-size:10px; color:green; font-weight:700;">✓ In Stock</span></div>
+    </div>
+
+    <div style="border:2px solid #0ea5e9; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/teecock.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">Tee Cock / Angle Valve</b><br><span style="font-size:10px; color:green; font-weight:700;">✓ In Stock - Chrome</span></div>
+    </div>
+
+    <!-- Jali -->
+    <div style="border:2px solid #475569; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/sinkwate.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">SS Sink Waste Strainer</b><br><span style="font-size:10px; color:#475569;">Round - 6 Hole</span></div>
+    </div>
+
+    <div style="border:2px solid #475569; border-radius:12px; background:white; overflow:hidden;">
+      <img src="imagess/floordrain.jpg" style="width:100%; height:170px; object-fit:contain; padding:8px; background:white;">
+      <div style="padding:8px;"><b style="font-size:12px;">Floor Drain Jali SS</b><br><span style="font-size:10px; color:#475569;">Square - Designer</span></div>
+    </div>
+
+  </div>
+</section>
+<!-- BRASS & GAS FITTINGS - BELOW HYDROPLAST -->
+<section style="max-width:1250px; margin:0 auto 40px auto; background:white; border-radius:22px; overflow:hidden; border:2px solid #854d0e; box-shadow:0 12px 30px rgba(0,0,0,0.12); font-family:Inter, sans-serif;">
+
+  <div style="background:linear-gradient(90deg, #422006, #ca8a04); padding:14px 26px; display:flex; justify-content:space-between; align-items:center;">
+    <h2 style="color:white; font-size:18px; font-weight:900; margin:0;">BRASS & GAS FITTINGS - HEAVY DUTY</h2>
+    <span style="background:white; color:#422006; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:900;">1/2" | 0.5" | GAS</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(210px, 1fr)); gap:14px; padding:18px; background:#fefce8;">
+
+    <div style="background:white; border:1.5px solid #fde68a; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/male tee.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Brass TEE OT 0.5 Inch</p>
+      <p style="font-size:11px; color:#57534e;">Heavy Brass - 3 Way</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div>
+
+    <div style="background:white; border:1.5px solid #fde68a; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/brass hose nipple.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Brass Hose Nipple</p>
+      <p style="font-size:11px; color:#57534e;">1/2" - Barb Type</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div>
+
+    <div style="background:white; border:2px solid #facc15; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/gass nozal valve.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">GAS COCK - China Original</p>
+      <p style="font-size:11px; color:#ca8a04; font-weight:700;">Yellow Handle - Safety</p>
+      <span style="background:#eab308; color:black; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">HOT ITEM</span>
+    </div>
+
+    <div style="background:white; border:1.5px solid #fde68a; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/gass cock.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Gas Valve 1/2" - Nylon Pipe</p>
+      <p style="font-size:11px; color:#dc2626;">Red Handle - 1/4 Turn</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div>
+
+    <div style="background:white; border:2px solid #facc15; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/gass noxal yellow.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Gas Valve Nozal 1/2"</p>
+      <p style="font-size:11px; color:#57534e;">Angle Type - China</p>
+      <span style="background:#eab308; color:black; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">BEST SELLER</span>
+    </div>
+
+    <div style="background:white; border:1.5px solid #e7e5e4; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/cp nozals 2.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Extension Nipple CP</p>
+      <p style="font-size:11px; color:#57534e;">1" to 6" - Full Set (TFE)</p>
+      <span style="background:#f1f5f9; color:#0f172a; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:700;">1" 1.5" 2" 3" 4" 6"</span>
+    </div>
+
+    <div style="background:white; border:1.5px solid #e7e5e4; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/cp nozals.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">Extension Nipple Set</p>
+      <p style="font-size:11px; color:#57534e;">Chrome - Heavy (TFE)</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div>
+
+     <div style="background:white; border:1.5px solid #e7e5e4; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/hose clump.jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">5/8" Double Barbed Ball Valve, Stainless Steel, </p>
+      <p style="font-size:11px; color:#57534e;">with Hose Clamps, 16x16mm</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div> 
+
+        <div style="background:white; border:1.5px solid #e7e5e4; border-radius:14px; overflow:hidden; text-align:center; padding:10px;">
+      <img src="imagess/ssvalve .jpg" style="width:100%; height:150px; object-fit:contain; background:white;">
+      <p style="font-weight:900; font-size:13px; margin:8px 0 2px 0;">All Size Stainless Steel Ball Valves , </p>
+      <p style="font-size:11px; color:#57534e;"> For Gass & Water</p>
+      <span style="background:#16a34a; color:white; font-size:10px; padding:3px 8px; border-radius:10px; font-weight:800;">✓ In Stock</span>
+    </div>
+
+  </div> 
+
+  <div style="background:#422006; color:white; text-align:center; padding:10px; font-size:12px; font-weight:700;">
+    All Brass & Gas Fittings Available at J Sons Traders Gilgit - Wholesale Price for Shopkeepers
+    <a href="https://wa.me/03456264638?text=Brass%20Fittings%20Price" style="background:#facc15; color:black; padding:6px 14px; border-radius:20px; text-decoration:none; margin-left:10px; font-weight:900;">WhatsApp Price</a>
+  </div>
+</section>
+<!-- GOLDEN WATER PUMPS - IMPORTANT - NO NAVBAR NEEDED -->
+<section id="golden-pumps" style="max-width:1250px; margin:20px auto; font-family:Inter, sans-serif;">
+  <div style="background:linear-gradient(90deg, #a16207, #facc15); border-radius:18px; padding:14px 22px; display:flex; justify-content:space-between; align-items:center; border:2px solid black;">
+    <h2 style="margin:0; font-size:20px; font-weight:900; color:black;">⚡ GOLDEN WATER PUMPS - SUBMERSIBLE & MONOBLOCK</h2>
+    <span style="background:black; color:#facc15; padding:6px 14px; border-radius:20px; font-size:11px; font-weight:900;">100% COPPER WINDING</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px;">
+    
+    <div style="background:white; border:2px solid #eab308; border-radius:16px; padding:16px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+      <img src="imagess/submursible pump.jpeg" style="width:100%; height:240px; object-fit:contain;">
+      <h3 style="margin:10px 0 4px 0; font-weight:900;">GOLDEN Submersible Pump</h3>
+      <p style="font-size:12px; color:#57534e; margin:0;">0.5HP to 7.5HP | Deep Well | High Head</p>
+      <p style="font-size:11px; font-weight:800; color:#a16207; margin-top:6px;">Best for Gilgit-Baltistan - Pahari ilaqon ke liye best</p>
+    
+    </div>
+
+    <div style="background:white; border:2px solid #0f172a; border-radius:16px; padding:16px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
+      <img src="imagess/monoblockpumps.jpg" style="width:100%; height:240px; object-fit:contain;">
+      <h3 style="margin:10px 0 4px 0; font-weight:900;">GOLDEN Monoblock Pump</h3>
+      <p style="font-size:12px; color:#57534e; margin:0;">0.5HP to 2HP | Self Priming | Full Copper</p>
+      <p style="font-size:11px; font-weight:800; color:#16a34a; margin-top:6px;">Low Electricity - Zyada Pressure</p>
+
+    </div>
+
+  </div>
+</section>
+<!-- HOSE PIPES PORTION - OCEAN + SPIRAL - ONLY PIPE -->
+<section id="hose-pipes" style="max-width:1100px; margin:20px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #0ea5e9; box-shadow:0 12px 30px rgba(0,0,0,0.12); font-family:Inter, sans-serif;">
+
+  <div style="background:linear-gradient(90deg, #0284c7, #0ea5e9); padding:12px 22px; display:flex; justify-content:space-between; align-items:center;">
+    <h2 style="color:white; font-size:17px; font-weight:900; margin:0;">OCEAN & SPIRAL HOSE PIPES - HIGH PRESSURE</h2>
+    <span style="background:white; color:#0284c7; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:900;">PVC | SUCTION</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+
+    <!-- OCEAN PIPE -->
+    <div style="padding:18px; background:#f0f9ff; border-right:2px solid #bae6fd; text-align:center;">
+      <div style="background:#0284c7; color:white; display:inline-block; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:900; margin-bottom:8px;">OCEAN BRAND</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900;">OCEAN High Pressure Transparent Hose</h3>
+      <p style="font-size:11px; color:#475569; margin:0 0 10px 0;">PVC Reinforced • Yellow Line • High Quality</p>
+      
+      <img src="imagess/hosepipe1.jpg" style="width:100%; height:340px; object-fit:contain; background:white; border-radius:14px; padding:10px; border:2px solid #7dd3fc;">
+      
+      <div style="margin-top:12px; background:white; border-radius:10px; padding:10px; border:1.5px solid #e0f2fe; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#0c4a6e;">Available Sizes:</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:6px;">
+          <span style="background:#f0f9ff; border:1px solid #0284c7; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700;">8MM</span>
+          <span style="background:#f0f9ff; border:1px solid #0284c7; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700;">10MM</span>
+          <span style="background:#f0f9ff; border:1px solid #0284c7; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700;">1"</span>
+          <span style="background:#f0f9ff; border:1px solid #0284c7; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700;">4"</span>
+          <span style="background:#16a34a; color:white; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:800;">✓ Stock</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPIRAL SUCTION HOSE -->
+    <div style="padding:18px; background:#fffbeb; text-align:center;">
+      <div style="background:#d97706; color:white; display:inline-block; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:900; margin-bottom:8px;">HEAVY DUTY</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900;">Spiral Wire Suction Hose</h3>
+      <p style="font-size:11px; color:#92400e; margin:0 0 10px 0;">Steel Wire Reinforced • Flexible • Long Life</p>
+      
+      <img src="imagess/hosepipe2.jpg" style="width:100%; height:340px; object-fit:contain; background:white; border-radius:14px; padding:10px; border:2px solid #fcd34d;">
+      
+      <div style="margin-top:12px; background:white; border-radius:10px; padding:10px; border:1.5px solid #fef3c7; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#78350f;">Best For:</p>
+        <p style="font-size:11.5px; color:#444; margin:6px 0 0 0; line-height:1.5;">Water Pump Suction, Construction, De-watering, Agriculture. Kink-proof, high vacuum pressure.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;">
+          <span style="background:#fffbeb; border:1px solid #d97706; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:700;">1" - 4"</span>
+          <span style="background:#111827; color:white; padding:4px 8px; border-radius:6px; font-size:11px; font-weight:800;">Steel Wire</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:#0c4a6e; color:white; text-align:center; padding:12px; font-size:12px; font-weight:700; display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap;">
+    <span>OCEAN Transparent + Spiral Suction - J Sons Traders Gilgit - Wholesale Price</span>
+    <a href="https://wa.me/03456264638?text=Hose%20Pipe%20Price%20Ocean%20and%20Spiral" style="background:#0ea5e9; color:white; padding:7px 16px; border-radius:20px; text-decoration:none; font-weight:900;">Get Hose Price</a>
+  </div>
+
+</section>
+<!-- HOSE CONNECTORS / DOUBLE NIPPLE - PRODUCTS PORTION -->
+<section id="hose-connectors" style="max-width:1150px; margin:20px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #111827; font-family:Inter, sans-serif; box-shadow:0 12px 30px rgba(0,0,0,0.1);">
+
+  <div style="background:linear-gradient(90deg, #111827, #ca8a04); padding:12px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <h2 style="color:white; font-size:17px; font-weight:900; margin:0;">🔩 HOSE Nozal CONNECTORS - DOUBLE & REDUCER</h2>
+    <span style="background:#facc15; color:black; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:900;">GI • BRASS • ALL SIZES</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; padding:18px; background:#f8fafc;">
+
+    <!-- PRODUCT 1 - SILVER LONG -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center; transition:0.2s;">
+      <img src="imagess/exetention noxals.jpg" alt="GI Double Hose Nipple" style="width:100%; height:260px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:14px; font-weight:900; margin:10px 0 4px 0;">GI Steel Double Hose Nozals</h3>
+      <p style="font-size:11px; color:#64748b; margin:0;">Silver Galvanized • Heavy Duty</p>
+      <div style="display:flex; gap:6px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+        <span style="background:#f1f5f9; border:1px solid #cbd5e1; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:700;">1" to 4"</span>
+        <span style="background:#16a34a; color:white; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:800;">✓ In Stock</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT 2 - GOLDEN DOUBLE -->
+    <div style="background:white; border:2px solid #fde68a; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/extention big.jpg" alt="Brass Double Hose Nipple" style="width:100%; height:260px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:14px; font-weight:900; margin:10px 0 4px 0;">Brass Golden Double Nozals</h3>
+      <p style="font-size:11px; color:#92400e; margin:0;">Zinc Plated • High Pressure • Rust Proof</p>
+      <div style="display:flex; gap:6px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+        <span style="background:#fffbeb; border:1px solid #f59e0b; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:700;">1" to 6"</span>
+        <span style="background:#111827; color:#facc15; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:800;">Heavy Duty</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT 3 - REDUCER / PUMP -->
+    <div style="background:white; border:2px solid #bfdbfe; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/thredde noxals pump.jpg" alt="Reducer Hose Nipple" style="width:100%; height:260px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:14px; font-weight:900; margin:10px 0 4px 0;">Pump Hose Reducer <br>Nozals</h3>
+      <p style="font-size:11px; color:#1e40af; margin:0;">Thread x Hose • For Water Pump & Suction</p>
+      <div style="display:flex; gap:6px; justify-content:center; margin-top:8px; flex-wrap:wrap;">
+        <span style="background:#eff6ff; border:1px solid #3b82f6; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:700;">Golden / Silver</span>
+        <span style="background:#eab308; color:black; padding:3px 8px; border-radius:6px; font-size:10px; font-weight:800;">Best Seller</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:#111827; color:white; padding:10px 18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <p style="margin:0; font-size:12px;">Original <b style="color:#facc15;">GI & Brass Hose Joiners</b> - Bulk Qty Available at J Sons Traders Gilgit - For Spiral & Ocean Pipes</p>
+    <a href="https://wa.me/03456264638?text=Hose%20Nipple%20Connector%20Price" style="background:#facc15; color:black; padding:8px 16px; border-radius:20px; text-decoration:none; font-weight:900; font-size:12px;">Get Price on WhatsApp</a>
+  </div>
+
+</section>
+<!-- VALVES PORTION - SS GATE, SS BALL, ANWAR BRASS STRAINER -->
+<section id="valves-portion" style="max-width:1150px; margin:25px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #1e293b; font-family:Inter, sans-serif; box-shadow:0 15px 35px rgba(0,0,0,0.15);">
+
+  <!-- HEADER -->
+  <div style="background:linear-gradient(90deg, #0f172a, #1e40af); padding:14px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-size:18px; font-weight:900; margin:0; letter-spacing:0.5px;">🔧 INDUSTRIAL VALVES - SS & BRASS</h2>
+    <div style="display:flex; gap:8px;">
+      <span style="background:#3b82f6; color:white; padding:5px 12px; border-radius:20px; font-size:11px; font-weight:900;">SS 304 / CF8M</span>
+      <span style="background:#facc15; color:black; padding:5px 12px; border-radius:20px; font-size:11px; font-weight:900;">ANWAR ENGINEERING</span>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:0;">
+
+    <!-- 1 - ANWAR BRASS STRAINER - SPECIAL MENTION -->
+    <div style="background:linear-gradient(180deg, #fffbeb, #ffffff); padding:18px; border-right:2px solid #fde68a; border-bottom:2px solid #fde68a; text-align:center; position:relative;">
+      <div style="background:#111827; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:900; margin-bottom:10px; letter-spacing:0.5px;">ANWAR ENGINEERING WORKS</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900; color:#78350f;">Brass Strainer / Foot Valve</h3>
+      <p style="font-size:11px; color:#92400e; margin:0 0 12px 0; font-weight:600;">Jali Wala Filter - Anwar Engineering ka Original</p>
+      
+      <img src="imagess/brass stainer.jpg" alt="Anwar Engineering Brass Strainer" style="width:100%; height:320px; object-fit:contain; background:white; border-radius:16px; padding:10px; border:2px solid #facc15; box-shadow:0 8px 20px rgba(250,204,21,0.2);">
+      
+      <div style="margin-top:12px; background:white; border-radius:12px; padding:12px; border:1.5px solid #fde68a; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#78350f;">Features:</p>
+        <ul style="margin:6px 0 0 16px; font-size:11.5px; color:#444; line-height:1.6;">
+          <li>Brass Body + Stainless Steel Jali</li>
+          <li>Anwar Engineering Works Stamped</li>
+          <li>For Suction - Kachra Rokta Hai</li>
+        </ul>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
+          <span style="background:#fffbeb; border:1px solid #d97706; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">1" 1.5" 2" 3" 4"</span>
+          <span style="background:#16a34a; color:white; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">✓ Stock Available</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 - SS GATE VALVE -->
+    <div style="background:linear-gradient(180deg, #f8fafc, #ffffff); padding:18px; border-right:2px solid #e2e8f0; border-bottom:2px solid #e2e8f0; text-align:center;">
+      <div style="background:#dc2626; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:900; margin-bottom:10px;">SS GATE VALVE - RED WHEEL</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900; color:#0f172a;">Stainless Steel Gate Valve</h3>
+      <p style="font-size:11px; color:#475569; margin:0 0 12px 0; font-weight:600;">CF8M 200 - Full Flow - Heavy Duty</p>
+      
+      <img src="imagess/ss gatevalves.jpeg" alt="SS Gate Valve CF8M" style="width:100%; height:320px; object-fit:contain; background:white; border-radius:16px; padding:10px; border:2px solid #cbd5e1;">
+      
+      <div style="margin-top:12px; background:white; border-radius:12px; padding:12px; border:1.5px solid #e2e8f0; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#0f172a;">Specification:</p>
+        <p style="font-size:11.5px; color:#444; margin:6px 0 0 0; line-height:1.6;">SS 304 / CF8M Body, Red Hand Wheel, Screwed End. High Pressure ke liye best, zang nahi lagta.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
+          <span style="background:#f1f5f9; border:1px solid #0f172a; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">1" to 4"</span>
+          <span style="background:#0f172a; color:white; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">SS 316 Also</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 - SS BALL VALVE -->
+    <div style="background:linear-gradient(180deg, #eff6ff, #ffffff); padding:18px; border-bottom:2px solid #e2e8f0; text-align:center;">
+      <div style="background:#1d4ed8; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:900; margin-bottom:10px;">SS BALL VALVE - BLUE HANDLE</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900; color:#1e3a8a;">SS 2-Piece Ball Valve</h3>
+      <p style="font-size:11px; color:#1d4ed8; margin:0 0 12px 0; font-weight:600;">ON/OFF Lever - 100% Leak Proof</p>
+      
+      <img src="imagess/ss ball valves.jpeg" alt="SS Ball Valve Blue Handle" style="width:100%; height:320px; object-fit:contain; background:white; border-radius:16px; padding:10px; border:2px solid #93c5fd;">
+      
+      <div style="margin-top:12px; background:white; border-radius:12px; padding:12px; border:1.5px solid #bfdbfe; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#1e3a8a;">Best For:</p>
+        <p style="font-size:11.5px; color:#444; margin:6px 0 0 0; line-height:1.6;">Water, Oil, Gas Line. Blue Handle pe ON/OFF likha hua, SS 304/316. Gilgit me sab se zyada demand.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
+          <span style="background:#dbeafe; border:1px solid #1d4ed8; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">1/2" to 4"</span>
+          <span style="background:#facc15; color:black; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Hot Item</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(180deg, #eff6ff, #ffffff); padding:18px; border-bottom:2px solid #e2e8f0; text-align:center;">
+      <div style="background:#1d4ed8; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:11px; font-weight:900; margin-bottom:10px;">SS BALL VALVE - BLUE HANDLE</div>
+      <h3 style="margin:0 0 4px 0; font-size:16px; font-weight:900; color:#1e3a8a;">SS 2-Piece Ball Valve</h3>
+      <p style="font-size:11px; color:#1d4ed8; margin:0 0 12px 0; font-weight:600;">ON/OFF Lever - 100% Leak Proof</p>
+      
+      <img src="imagess/ss ball valves.jpeg" alt="SS Ball Valve Blue Handle" style="width:100%; height:320px; object-fit:contain; background:white; border-radius:16px; padding:10px; border:2px solid #93c5fd;">
+      
+      <div style="margin-top:12px; background:white; border-radius:12px; padding:12px; border:1.5px solid #bfdbfe; text-align:left;">
+        <p style="font-size:12px; font-weight:800; margin:0; color:#1e3a8a;">Best For:</p>
+        <p style="font-size:11.5px; color:#444; margin:6px 0 0 0; line-height:1.6;">Water, Oil, Gas Line. Blue Handle pe ON/OFF likha hua, SS 304/316. Gilgit me sab se zyada demand.</p>
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;">
+          <span style="background:#dbeafe; border:1px solid #1d4ed8; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">1/2" to 4"</span>
+          <span style="background:#facc15; color:black; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Hot Item</span>
+        </div>
+      </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- COMMODE & BASIN BOLT KIT PORTION - GROSNA & RACK BOLT -->
+<section id="bolt-kit-portion" style="max-width:1150px; width:95%; margin:25px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #0e7490; font-family:Inter, sans-serif; box-shadow:0 12px 30px rgba(0,0,0,0.12); box-sizing:border-box;">
+
+
+
+  <div class="bolt-header" style="background:linear-gradient(90deg, #0e7490, #0891b2); padding:12px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <h2 style="color:white; font-size:14px; font-weight:900; margin:0; line-height:1.3;">🔩 COMMODE & BASIN BOLT KIT - RACK BOLT</h2>
+    <span style="background:white; color:#0e7490; padding:5px 12px; border-radius:20px; font-size:10px; font-weight:900; white-space:nowrap;">GROSNA • HEAVY DUTY • SS + GI</span>
+  </div>
+
+  <div class="bolt-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:0; width:100%; margin:0 auto;">
+
+    <!-- 1 - RACK BOLT / WALL HUNG - MOBILE PE UPAR -->
+    <div style="background:linear-gradient(180deg, #fff7ed, #ffffff); padding:14px; text-align:center; border-right:2px solid #fed7aa; box-sizing:border-box; width:100%;">
+      <div style="background:#f97316; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:10px; font-weight:900; margin-bottom:10px;">RACK BOLT KIT - WALL HUNG</div>
+      <h3 style="font-size:15px; font-weight:900; margin:0 0 4px 0;">Commode & Basin Rack Bolt</h3>
+      <p style="font-size:11px; color:#9a3412; margin:0 0 12px 0;">Orange + Silver Set - Double Thread Stud + Nut + Washer + Gitti</p>
+      
+      <img class="bolt-img" src="imagess/basin bolt kit.jpg" alt="Rack Bolt Kit Commode" style="width:100%; height:340px; object-fit:contain; background:white; border-radius:16px; border:2px solid #fb923c; padding:10px; box-sizing:border-box; display:block; margin:0 auto;">
+      
+      <div style="background:white; border:1.5px solid #fed7aa; border-radius:12px; padding:12px; margin-top:12px; text-align:left; width:100%; box-sizing:border-box;">
+        <p style="font-size:11.5px; color:#444; margin:0; line-height:1.6;">
+          2x Rack Bolt (Stud), 2x Orange Gitti, 2x Orange Washer, 2x Nut - Basin aur wall hung commode ke liye best. Zang proof.
+        </p>
+        <div style="margin-top:10px; display:flex; gap:6px; flex-wrap:wrap;">
+          <span style="background:#fff7ed; border:1px solid #f97316; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:800;">8x80 / 10x100 / 12x120mm</span>
+          <span style="background:#16a34a; color:white; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:800;">Original</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 - GROSNA COMMODE BOLT - MOBILE PE NEECHE -->
+    <div style="background:linear-gradient(180deg, #ecfeff, #ffffff); padding:14px; text-align:center; box-sizing:border-box; width:100%;">
+      <div style="background:#0891b2; color:white; display:inline-block; padding:5px 14px; border-radius:20px; font-size:10px; font-weight:900; margin-bottom:10px;">GROSNA BRAND - BLUE PACK</div>
+      <h3 style="font-size:15px; font-weight:900; margin:0 0 4px 0;">GROSNA Commode / Basin Bolt Kit</h3>
+      <p style="font-size:11px; color:#155e75; margin:0 0 12px 0;">Complete Set with Cap - Plumber Choice</p>
+      
+      <img class="bolt-img" src="imagess/commode bolt kit.jpg" alt="Grosna Basin Bolt Kit" style="width:100%; height:340px; object-fit:contain; background:white; border-radius:16px; border:2px solid #22d3ee; padding:10px; box-sizing:border-box; display:block; margin:0 auto;">
+      
+      <div style="background:white; border:1.5px solid #a5f3fc; border-radius:12px; padding:12px; margin-top:12px; text-align:left; width:100%; box-sizing:border-box;">
+        <b style="font-size:11px; color:#0e7490;">Complete Fitting Kit:</b>
+        <p style="font-size:11.5px; color:#444; margin:6px 0 0 0; line-height:1.6;">
+          2x Long Hex Bolt, 2x Heavy Gitti, 2x White Cap + Washer - Commode ko floor se tight karne ke liye. Sab se zyada bikne wala.
+        </p>
+        <div style="margin-top:10px; display:flex; gap:6px; flex-wrap:wrap;">
+          <span style="background:#ecfeff; border:1px solid #0891b2; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:800;">For Commode & Basin Both</span>
+          <span style="background:#111827; color:white; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:800;">Best Seller</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bolt-footer" style="background:#0e7490; color:white; padding:12px 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <p style="margin:0; font-size:12px; line-height:1.4;">J Sons Traders - <b style="color:#fde68a;">Original Grosna & Rack Bolt</b> | Plumbers ke liye wholesale packing available</p>
+    <a href="https://wa.me/923456264638?text=Commode%20Basin%20Bolt%20Kit%20Price" style="background:#facc15; color:black; padding:9px 18px; border-radius:25px; text-decoration:none; font-weight:900; font-size:12px; white-space:nowrap; text-align:center;">WhatsApp Price</a>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- CONNECTION PIPES - FLEXIBLE PIPES PORTION -->
+<section id="connection-pipes" style="max-width:1150px; margin:25px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #111827; font-family:Inter,sans-serif; box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+
+  <div style="background:linear-gradient(90deg, #111827, #334155); padding:14px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+    <h2 style="color:white; font-size:18px; font-weight:900; margin:0;">🚿 CONNECTION PIPES - FLEXIBLE & SHOWER HOSE</h2>
+    <span style="background:#facc15; color:black; padding:5px 12px; border-radius:20px; font-size:11px; font-weight:900;">SS • PVC • NYLON BRAIDED • ALL SIZES</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; padding:18px; background:#f8fafc;">
+
+    <!-- 1 -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/conection pipe2.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">SS Braided Connection Pipe</h3>
+      <p style="font-size:11px; color:#64748b; margin:0;">For Geyser, Basin, WC • 12" to 36"</p>
+      <span style="background:#e2e8f0; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">Silver Braided</span>
+    </div>
+
+    <!-- 2 - HOT SELLER -->
+    <div style="background:white; border:2px solid #facc15; border-radius:14px; padding:12px; text-align:center; position:relative;">
+      <div style="position:absolute; top:8px; left:8px; background:#eab308; color:black; padding:3px 8px; border-radius:10px; font-size:9px; font-weight:900;">HOT SELLER</div>
+      <img src="imagess/conection pipe1.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">Black Nylon Braided Pipe</h3>
+      <p style="font-size:11px; color:#92400e; margin:0;">With Yellow Holder • High Pressure</p>
+      <span style="background:#fef3c7; border:1px solid #f59e0b; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">18" 24" 36"</span>
+    </div>
+
+    <!-- 3 -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/gizer conection.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">Flexible Double End 1ft</h3>
+      <p style="font-size:11px; color:#64748b; margin:0;">Chrome Finish • Both Side Nut</p>
+      <span style="background:#f1f5f9; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">1ft / 1.5ft / 2ft</span>
+    </div>
+
+    <!-- 4 -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/gizer conection pipe 2.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">Shower Hose Pipe 1 Meter</h3>
+      <p style="font-size:11px; color:#64748b; margin:0;">SS Spiral • For Muslim Shower / Hand Shower</p>
+      <span style="background:#0ea5e9; color:white; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">1M • 1.5M • 2M</span>
+    </div>
+
+    <!-- 5 -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/conection pipe4.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">Red Blue Dot Connection Pipe</h3>
+      <p style="font-size:11px; color:#1e40af; margin:0;">Hot & Cold Mark • Heavy Brass Nut</p>
+      <span style="background:#dbeafe; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">Imported Quality</span>
+    </div>
+
+    <!-- 6 -->
+    <div style="background:white; border:2px solid #e5e7eb; border-radius:14px; padding:12px; text-align:center;">
+      <img src="imagess/conection pipe3.jpg" style="width:100%; height:230px; object-fit:contain; background:white; border-radius:10px;">
+      <h3 style="font-size:13px; font-weight:900; margin:10px 0 2px 0;">Black Braided - Closeup</h3>
+      <p style="font-size:11px; color:#444; margin:0;">Strong Nut + Rubber Washer Inside</p>
+      <span style="background:#16a34a; color:white; padding:3px 8px; border-radius:20px; font-size:10px; font-weight:800; margin-top:6px; display:inline-block;">Leak Proof</span>
+    </div>
+
+  </div>
+
+  <div style="background:#111827; color:white; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <p style="margin:0; font-size:12px;">J Sons Traders Gilgit - <b style="color:#facc15;">All Sizes Connection Pipes</b> - Geyser, Basin, WC, Shower ke liye</p>
+    <a href="https://wa.me/923456264638?text=Connection%20Pipe%20Price%20List" style="background:#facc15; color:black; padding:8px 16px; border-radius:20px; text-decoration:none; font-weight:900; font-size:12px;">Get Wholesale Price</a>
+  </div>
+
+</section>
+
+
+    <section id="m-showers" style="max-width:1150px; margin:25px auto; background:white; border-radius:20px; overflow:hidden; border:2px solid #111827; font-family:Inter,sans-serif; box-shadow:0 12px 30px rgba(0,0,0,0.12);">
+    <h2 style="text-align:center; font-size:30px; font-weight:800; color:#0f172a; margin-bottom:30px;">Bath & <span style="color:#e11d48;">Tank Accessories</span></h2>
+
+    <div class="big-product-grid" style="display:grid; grid-template-columns:1fr; gap:20px; justify-content:center;">
+      
+      <!-- 1 -->
+      <div class="big-card" style="background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:18px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+        <div style="background:#f9fafb; border-radius:14px; height:280px; display:flex; align-items:center; justify-content:center; padding:15px;">
+          <img src="imagess/m shower2.jpg" style="max-width:100%; max-height:260px; object-fit:contain;">
+        </div>
+        <h3 style="font-size:20px; font-weight:800; margin:15px 0 5px;">FACO SMART</h3>
+        <p style="font-size:14px; color:#6b7280;">Shut-Off Shower | Premium</p>
+        <a href="https://wa.me/923456264638" style="display:block; margin-top:15px; background:#0f172a; color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">WhatsApp Order</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="big-card" style="background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:18px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+        <div style="background:#f9fafb; border-radius:14px; height:280px; display:flex; align-items:center; justify-content:center; padding:15px;">
+          <img src="imagess/m showe1.jpg" style="max-width:100%; max-height:260px; object-fit:contain;">
+        </div>
+        <h3 style="font-size:20px; font-weight:800; margin:15px 0 5px;">FACO AFDAL</h3>
+        <p style="font-size:14px; color:#6b7280;">Soft Spray | Original</p>
+        <a href="https://wa.me/923456264638" style="display:block; margin-top:15px; background:#0f172a; color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">WhatsApp Order</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="big-card" style="background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:18px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+        <div style="background:#f9fafb; border-radius:14px; height:280px; display:flex; align-items:center; justify-content:center; padding:15px;">
+          <img src="imagess/water saver.jpg" style="max-width:100%; max-height:260px; object-fit:contain;">
+        </div>
+        <h3 style="font-size:20px; font-weight:800; margin:15px 0 5px;">WATER SAVER</h3>
+        <p style="font-size:14px; color:#6b7280;">Float Switch | Auto Control</p>
+        <a href="https://wa.me/923456264638" style="display:block; margin-top:15px; background:#0284c7; color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">WhatsApp Order</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="big-card" style="background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:18px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+        <div style="background:#f9fafb; border-radius:14px; height:280px; display:flex; align-items:center; justify-content:center; padding:15px;">
+          <img src="imagess/float valve ss.jpg" style="max-width:100%; max-height:260px; object-fit:contain;">
+        </div>
+        <h3 style="font-size:20px; font-weight:800; margin:15px 0 5px;">SS Float Ball</h3>
+        <p style="font-size:14px; color:#6b7280;">Stainless Steel | Rust Proof</p>
+        <a href="https://wa.me/923456264638" style="display:block; margin-top:15px; background:#0284c7; color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">WhatsApp Order</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="big-card" style="background:#fff; border:1px solid #e5e7eb; border-radius:18px; padding:18px; text-align:center; box-shadow:0 6px 25px rgba(0,0,0,0.06);">
+        <div style="background:#f9fafb; border-radius:14px; height:280px; display:flex; align-items:center; justify-content:center; padding:15px;">
+          <img src="imagess/float valve.jpg" style="max-width:100%; max-height:260px; object-fit:contain;">
+        </div>
+        <h3 style="font-size:20px; font-weight:800; margin:15px 0 5px;">ANWAR Float Valve</h3>
+        <p style="font-size:14px; color:#6b7280;">Brass | Heavy Duty</p>
+        <a href="https://wa.me/923456264638" style="display:block; margin-top:15px; background:#0284c7; color:#fff; padding:14px; border-radius:10px; text-decoration:none; font-weight:700;">WhatsApp Order</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== FIXINGS & CLAMPS - 1 MOBILE / 3 DESKTOP CENTER ===== -->
+<section style="padding:40px 12px; background:#f8fafc; font-family:Poppins,sans-serif;">
+  <div style="max-width:1150px; margin:0 auto;">
+    <h2 style="text-align:center; font-size:30px; font-weight:800; color:#0f172a;">Pipe <span style="color:#0284c7;">Fixings & Clamps</span></h2>
+    <p style="text-align:center; color:#64748b; margin-bottom:30px;">SS Nuts, Washers, Anchors, Clamps - JSONZ Gilgit</p>
+
+    <div class="fix-grid" style="display:grid; grid-template-columns:1fr; gap:18px; max-width:420px; margin:0 auto;">
+      
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center; border-radius:12px;"><img src="imagess/nut bolts.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">SS Lock Nut</h3><p style="font-size:13px; color:#64748b;">Nylon Insert | Anti-Vibration</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/WhatsApp Image 2026-10-04 at 10.45.10 PM (1).jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">SS Washer</h3><p style="font-size:13px; color:#64748b;">Flat Washer | All Sizes</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/fisher.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">Drop-In Anchor</h3><p style="font-size:13px; color:#64748b;">Steel Fixing | Heavy Duty</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/road 10mm.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">Threaded Rod M10</h3><p style="font-size:13px; color:#64748b;">1000mm | Stainless Steel</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/clump u gi.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">Rubber Lined Clamp</h3><p style="font-size:13px; color:#64748b;">Noise Proof | M10 Nut</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/clump2.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">Hook Clamp</h3><p style="font-size:13px; color:#64748b;">Nail Type | Ceiling Mount</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/clump u pvc.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">U-PVC Pipe Clip</h3><p style="font-size:13px; color:#64748b;">Wall Mount | Plastic</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/clump1.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">SS Strap Clamp</h3><p style="font-size:13px; color:#64748b;">U Type | Heavy Gauge</p>
+      </div>
+
+      <div style="background:#fff; border-radius:18px; padding:16px; border:1px solid #e2e8f0; box-shadow:0 4px 20px rgba(0,0,0,0.05); text-align:center;">
+        <div style="background:#fff; height:300px; display:flex; align-items:center; justify-content:center;"><img src="imagess/clump hanging.jpg" style="max-height:270px; max-width:100%; object-fit:contain;"></div>
+        <h3 style="font-size:18px; font-weight:700; margin:12px 0 4px;">Split Clamp</h3><p style="font-size:13px; color:#64748b;">With Screw | Ceiling</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<div class="pprc-section">
+  <div class="pprc-card">
+    <!-- IMAGE UPAR MOBILE PE -->
+    <div class="pprc-img">
+      <img src="/imagess/pprc gotkeee.jpg" alt="PPRC Gotke Dies 20-90mm">
+      <p style="font-size:11px; color:#94a3b8; margin-top:8px;">Heavy Quality - Machine Dies</p>
+    </div>
+
+    <!-- CONTENT NEECHE MOBILE PE -->
+    <div class="pprc-content">
+      <span class="pprc-badge">PPRC GOTKE - MACHINE DIES</span>
+      <h2 class="pprc-title">PPRC Welding Gotke / Dies</h2>
+      <p class="pprc-sub">Welding Machine me lagne wale - Heavy Quality</p>
+
+      <div class="pprc-grid">
+        <div class="p-feat hi">🔧 20mm - 90mm Tak</div>
+        <div class="p-feat hi">💪 Heavy Quality</div>
+        <div class="p-feat">✅ Non-Stick Coating</div>
+        <div class="p-feat">✅ Long Life</div>
+      </div>
+
+      <p style="font-size:12px; font-weight:800; margin:12px 0 6px 0;">Available Sizes:</p>
+      <div class="size-box">
+        <span class="size-chip">20mm</span>
+        <span class="size-chip">25mm</span>
+        <span class="size-chip">32mm</span>
+        <span class="size-chip">40mm</span>
+        <span class="size-chip">50mm</span>
+        <span class="size-chip">63mm</span>
+        <span class="size-chip big">75mm 🔥</span>
+        <span class="size-chip big">90mm 🔥</span>
+      </div>
+
+      <div style="background:#fffbeb; border:1px dashed #f59e0b; padding:8px 10px; border-radius:8px; font-size:11px; font-weight:700; color:#92400e; margin-top:10px; text-align:center;">
+        📢 Sizes 75mm & 90mm Available  - For Special Order .
+      </div>
+
+      <a href="tel:03456364638" class="p-btn">📞 Order Now - J Sons Traders Gilgit</a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="tank-con-sec">
+  <div class="tank-con-card">
+    
+    <!-- 2 IMAGE EK LINE ME NORMAL SIZE -->
+    <div class="img-row">
+      <div class="img-box">
+        <img src="/imagess/tenkii bush1.jpg" alt="Tank Connectors Set">
+        <p>4 Pcs Set - SS & Brass</p>
+      </div>
+      <div class="img-box">
+        <img src="/imagess/tenkii bush2.jpg" alt="Installed on Tank">
+        <p>Installed View</p>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="con-content">
+      <span class="con-badge">TANK CONNECTOR</span>
+      <h3 class="con-title">Water Tank Connector / Thuthni</h3>
+      <p class="con-sub">Tanki ki thuthni - Stainless Steel & Brass</p>
+      
+      <div class="con-feat">
+        <span class="c-feat ss">✅ SS 304</span>
+        <span class="c-feat">✅ Brass Heavy</span>
+        <span class="c-feat">✅ Leakage Proof</span>
+        <span class="c-feat">✅ Rubber Seal</span>
+      </div>
+
+      <div class="size-line">
+        <b>Available:</b> 1/2", 3/4", 1", 1.5", 2" 2.5", 3" <br>
+        <b>Material:</b> Stainless Steel & Brass - Heavy Quality
+      </div>
+
+      <a href="tel:03456264638" class="con-btn">📞 Order Karein - J Sons Traders</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="mh-section">
+  <h2 style="text-align:center; font-size:18px; font-weight:900; margin:0 0 12px 0;">Manhole Covers & PPRC Gotke - J Sons Traders</h2>
+  
+  <div class="mh-grid">
+
+    <!-- 1 - VOLVO -->
+    <div class="mh-card">
+      <span class="mh-badge b-volvo">VOLVO</span>
+      <div class="mh-img"><img src="/imagess/main hole volvo.jpg" alt="Volvo Main Hole Cover;"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">Volvo Main Hole Cover</h3>
+        <p class="mh-sub">Plastic Heavy Duty</p>
+        <div class="mh-sizes">Size: 12x12 | 15x15 | 18x18 </div>
+        <a href="tel:0345XXXXXXX" class="mh-btn blue">View Details →</a>
+      </div>
+    </div>
+
+    <!-- 2 - ATLAS SUPREME SS -->
+    <div class="mh-card">
+      <span class="mh-badge b-atlas">ATLAS</span>
+      <div class="mh-img"><img src="/imagess/main hole supreme.jpg" alt="Atlas Supreme SS"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">Atlas Supreme SS Cover</h3>
+        <p class="mh-sub">Stainless Steel - Hygienic Lid</p>
+        <div class="mh-sizes">Water Tank Lid - Rust Proof</div>
+        <a href="tel:0345XXXXXXX" class="mh-btn">View Details →</a>
+      </div>
+    </div>
+
+    <!-- 3 - ATLAS HERO SS -->
+    <div class="mh-card">
+      <span class="mh-badge b-atlas">ATLAS HERO</span>
+      <div class="mh-img"><img src="/imagess/main hole herro.jpg" alt="Atlas Hero SS"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">Atlas Hero Manhole Cover</h3>
+        <p class="mh-sub">Stainless Steel - Premium</p>
+        <div class="mh-sizes">Design: V Pattern - Strong</div>
+        <a href="tel:0345XXXXXXX" class="mh-btn">View Details →</a>
+      </div>
+    </div>
+
+    <!-- 4 - PRINCE 9x9 -->
+    <div class="mh-card">
+      <span class="mh-badge b-prince">PRINCE</span>
+      <div class="mh-img"><img src="/imagess/main hole prince.jpg" alt="Prince Manhole Cover"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">Prince Manhole Cover 9"x9"</h3>
+        <p class="mh-sub">Pure Plastic - Durable</p>
+        <div class="mh-sizes">12x12 | 15x15 | 18x18 Available</div>
+        <a href="tel:0345XXXXXXX" class="mh-btn blue">View Details →</a>
+      </div>
+    </div>
+
+    <!-- 5 - PPRC GOTKE -->
+    <div class="mh-card">
+      <span class="mh-badge b-pprc">HEAVY DUTY</span>
+      <div class="mh-img"><img src="/imagess/mai" alt="PPRC Gotke"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">PPRC Gotke Dies 20-90mm</h3>
+        <p class="mh-sub">Welding Machine Dies</p>
+        <div class="mh-sizes">20,25,32,40,50,63,75,90mm</div>
+        <a href="tel:0345XXXXXXX" class="mh-btn blue">View Details →</a>
+      </div>
+    </div>
+
+    <!-- 6 - ATLAS 12 DOT -->
+    <div class="mh-card">
+      <span class="mh-badge b-atlas">ATLAS</span>
+      <div class="mh-img"><img src="/imagess/main hole atlas.jpg" alt="Atlas Dot Cover"></div>
+      <div class="mh-info">
+        <h3 class="mh-title">Atlas Dot SS Cover</h3>
+        <p class="mh-sub">Stainless Steel - 12 Dot</p>
+        <div class="mh-sizes">Water Tank Hygienic Lid</div>
+        <a href="tel:0345XXXXXXX" class="mh-btn">View Details →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+      <section style="text-align:center; background:white; padding:20px; border-radius:16px; margin-top: 100px;">
+    <div style="text-align:center; margin-bottom:10px; margin-top: 50px;">
+      <span style="background:#f59e0b; color:black; padding:6px 18px; border-radius:20px; font-weight:800; font-size:12px;">CHINA IMPORTED - HEAVY DUTY</span>
+      <h2 style="color:black; font-size:38px; font-weight:900; margin-top:5px;">Box Type Hydraulic Butt Fusion Machines</h2>
+      <p style="color:#94a3b8; margin-top:-15px;">For HDPE Pipe Jointing - Available in Gilgit | Direct from Factory</p>
+    </div>
+
+    <!-- Machine Grid -->
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px;">
+
+      <!-- Machine 1 - Jo pic aap ne bheji -->
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div style="background:#f8fafc; padding:25px; text-align:center;">
+          <img src="/imagess/buttfussion.jpg" alt="Hydraulic Butt Fusion" style="width:100%; height:260px; object-fit:contain;">
+        </div>
+        <div style="padding:22px;">
+          <h3 style="font-size:20px; font-weight:800;">SH 355 - Box Hydraulic</h3>
+          <p style="color:#64748b; font-size:14px; margin:8px 0;">Range: 160mm - 355mm | Full Hydraulic System</p>
+          <ul style="font-size:13px; color:#334155; padding-left:18px; margin:12px 0;">
+            <li>4 Clamps, Red Heavy Frame</li>
+            <li>Heater Plate + Trimmer Included</li>
+            <li>For Gas & Water HDPE Pipes</li>
+          </ul>
+          <a href="https://wa.me/923456264638?text=Price%20for%20Box%20Hydraulic%20355%20Machine" style="display:block; background:#0f172a; color:white; text-align:center; padding:12px; border-radius:10px; text-decoration:none; font-weight:700; margin-top:15px;">Get Price on WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Machine 2 - Example -->
+      <div style="background:white; border-radius:20px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+        <div style="background:#f8fafc; padding:25px; text-align:center;">
+          <img src="/imagess/buttfussion3.jpg" style="width:100%; height:260px; object-fit:contain;">
+        </div>
+        <div style="padding:22px;">
+          <h3 style="font-size:20px; font-weight:800;">90 TO 315 - Box Hydraulic</h3>
+          <p style="color:#64748b; font-size:14px; margin:8px 0;">90 to 315mm Hydraulic Butt Fusion Welding Machine HDPE Pipe Jointing Machine
+|              Best for Gilgit Projects</p>
+          <ul style="font-size:13px; color:#334155; padding-left:18px; margin:12px 0;">
+            <li>Light Weight, Easy to Carry</li>
+            <!-- <li>Hydraulic Pressure Pump</li> -->
+            <li>1 Year Service Support</li>
+          </ul>
+          <a href="#" style="display:block; background:#f59e0b; color:black; text-align:center; padding:12px; border-radius:10px; text-decoration:none; font-weight:700; margin-top:15px;">In Stock - Order Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- MANUAL vs HYDRAULIC COMPARISON -->
+<div style="margin-top:30px; display:grid; grid-template-columns: 1fr 1fr ; gap:25px; ">
+
+
+      <div style="text-align:center; background:white; padding:20px; border-radius:16px; margin-bottom:20px; margin-top: 50px;">
+    <span style="background:#f59e0b; color:black; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:800;">HEAVY DUTY - HYDRAULIC</span>
+    <img src="/imagess/buttfussion.jpg" style="width:100%; height:200px; object-fit:contain; margin:15px 0;">
+    <h3 style="font-size:18px; font-weight:800;">Box Hydraulic 160-355mm</h3>
+    <p style="font-size:13px; color:#94a3b8; margin-top:5px;">For Big Projects, WASA, Govt Works. Full hydraulic pump se kaam easy.</p>
+    <p style="margin-top:10px; font-weight:800; color:#f59e0b;">Price: High - Professional Use</p>
+  </div>
+
+  <!-- Manual Type - Economical -->
+  <div style="background:white; border:2px solid #e2e8f0; border-radius:20px; padding:20px;">
+    <span style="background:#16a34a; color:white; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:800;">ECONOMY - MANUAL</span>
+    <img src="/imagess/buttfussion2.jpg" style="width:100%; height:200px; object-fit:contain; margin:15px 0;">
+    <h3 style="font-size:18px; font-weight:800; color:#0f172a;">Manual Type 63-160mm</h3>
+    <p style="font-size:13px; color:#64748b; margin-top:5px;">For Small Shops, House Wiring, Low Budget. Handle se operate hota hai.</p>
+    <p style="margin-top:10px; font-weight:800; color:#16a34a;">Price: Low - Shopkeeper Choice</p>
+  </div>
+
+</div>
+<!-- 2 MACHINES IN ONE DIV - WITH SEPARATE BORDERS -->
+  <div style="text-align:center; background:white; padding:20px; border-radius:16px; margin-bottom:20px; margin-top: 50px;">
+<!-- <div style="max-width:1100px; margin:30px auto; padding:25px; background:#f1f5f9; border-radius:20px; border:1px solid #e2e8f0;"> -->
+  
+
+  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+
+    <!-- BOX 1 - 4 Clamp Machine -->
+    <div style="flex:1; min-width:320px; max-width:500px; background:white; border:2px solid #f59e0b; border-radius:16px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+      <div style="background:#fffbeb; padding:15px; text-align:center; border-bottom:2px solid #f59e0b;">
+        <img src="/imagess/buttfussion4.jpg" alt="4 Clamp Machine" style="width:100%; height:240px; object-fit:contain;">
+      </div>
+      <div style="padding:18px; text-align:center;">
+        <h3 style="font-weight:800; font-size:18px; margin:0;">SH 250 - 4 Clamps</h3>
+        <p style="color:#16a34a; font-weight:700; font-size:13px; margin-top:6px; background:#dcfce7; display:inline-block; padding:4px 12px; border-radius:20px;">BOX HYDRAULIC</p>
+        <p style="font-size:13px; color:#64748b; margin-top:10px;">Range: 63mm - 250mm | With Trimmer & Heater</p>
+      </div>
+    </div>
+
+    <!-- BOX 2 - 2 Clamp Machine -->
+   
+       <div style="text-align:center; background:white; padding:20px; border-radius:16px; margin-bottom:20px; margin-top: 50px;">
+      
+      <div style="background:#f8fafc; padding:15px; text-align:center; border-bottom:2px solid #0f172a;">
+        <img src="/imagess/buttfussion5.jpg" alt="2 Clamp Machine" style="width:100%; height:240px; object-fit:contain;">
+      </div>
+      <div style="padding:18px; text-align:center;">
+        <h3 style="font-weight:800; font-size:18px; margin:0;">SH 160 - 2 Clamps</h3>
+        <p style="color:white; font-weight:700; font-size:13px; margin-top:6px; background:#0f172a; display:inline-block; padding:4px 12px; border-radius:20px;">MANUAL TYPE</p>
+        <p style="font-size:13px; color:#64748b; margin-top:10px;">Range: 63mm - 160mm | Economical Model</p>
+      </div>
+    </div>
+    </div> 
+  </div>
+    </section>
+
+
+  </div>
+</div>
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.gallery-section{
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+.gallery-section h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-family: Poppins, sans-serif;
+}
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.gallery-box{
+  width: 100%;
+  height: 300px; /* Dabbe ki height fix */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+}
+.gallery-box img{
+  width: 100% !important; /* Pora width dabbe ke andar */
+  height: 100% !important;
+  object-fit: cover; /* Agar pori pic bina cut ke chahiye to isko 'contain' kar do */
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.gallery-box:hover img{
+  transform: scale(1.05);
+}
+
+/* Mobile ke liye */
+@media(max-width: 600px){
+  .gallery-box{ height: 250px; }
+}
+</style>
+<body>
+     <a href="index.html" style="color:#94A3B8; text-decoration:none; font-size:13px;">← Back to Home</a>
+<!-- JSonz TRADERS - OUR GALLERY - Final Fixed Width Code -->
+<section class="gallery-section">
+  <h2>Our Gallery - <span style="color: #facc15; margin: 0 2px 0 2px;">JSONZ </span> Traders Gilgit</h2>
+  <div class="gallery-grid">
+    
+    <div class="gallery-box"><img src="imagess/front picture.jpeg" alt="Shop Inside"></div>
+    <div class="gallery-box"><img src="imagess/shop1.jpeg" alt="Shop Inside"></div>
+    <div class="gallery-box"><img src="imagess/shop2.jpeg" alt="Godown Stock"></div>
+    <div class="gallery-box"><img src="imagess/shop5.jpeg" alt="Pipes Stock"></div>
+     <div class="gallery-box"><img src="imagess/shop13.jpeg" alt="Shop Inside"></div>
+      <div class="gallery-box"><img src="imagess/shop14.jpeg" alt="Shop Inside"></div>
+    <div class="gallery-box"><img src="imagess/shop store 2.jpeg" alt="Popular Pipe"></div>
+    <div class="gallery-box"><img src="imagess/store picture.jpeg" alt="Fittings Store"></div>
+    <div class="gallery-box"><img src="imagess/store3.jpeg" alt="PPR Fittings"></div>
+    <div class="gallery-box"><img src="imagess/store4.jpeg" alt="Borewell Items"></div>
+    <div class="gallery-box"><img src="imagess/shop11.jpg" alt="Pipe Racks"></div>
+    <div class="gallery-box"><img src="imagess/shop12.jpeg" alt="Pipe Racks"></div>
+  </div>
+</section>
+
+
+ </div>
+
+  <div style="background:#facc15; color:black; padding:12px; text-align:center; font-size:12px; font-weight:800;">
+    Want to visit our shop? <a href="https://wa.me/923456264638" style="color:black; text-decoration:underline;">Get Location on WhatsApp</a> 📍 Gilgit Main Bazaar
+  </div>
+
+</section>
+
+    
+
+
+</body>
+</html>

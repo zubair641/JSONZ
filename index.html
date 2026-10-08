@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> First Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+    <style>
+
+  @media (max-width:768px){
+    /* Pura navbar thoda center me */
+    .nav-container, nav .container, header .container{
+      padding-left:6px !important;
+      padding-right:16px !important;
+      width:100% !important;
+      box-sizing:border-box !important;
+    }
+
+    /* LOGO LEFT */
+    .logo, .brand, .navbar-brand{
+      margin-left:2px !important;
+    }
+
+    /* HAMBURGER RIGHT SE 12px ANDAR */
+    .hamburger, .navbar-toggler, .menu-btn, .nav-toggle{
+      margin-right:12px !important;
+      transform:translateX(-6px) !important;
+    }
+  }
+
+  @media (max-width:768px){
+    #para{
+      font-size: 10px;
+    }
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+  /* BUTTONS - MOBILE PREMIUM */
+  .btn-group{
+    display:flex; 
+    gap:10px; 
+    flex-wrap:wrap; 
+    justify-content:center;
+    margin:16px 0;
+  }
+  .btn-view{
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color:white;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:13px;
+    border:2.5px solid #0f172a;
+    box-shadow:0 6px 18px rgba(15,23,42,0.25);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transition:0.2s;
+  }
+  .btn-view:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(15,23,42,0.35);
+  }
+  .btn-quote{
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color:white;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:800;
+    font-size:13px;
+    border:2.5px solid #16a34a;
+    box-shadow:0 6px 18px rgba(22,163,74,0.35);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transition:0.2s;
+  }
+  .btn-quote:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(22,163,74,0.45);
+  }
+  .btn-quote::before{
+    content:"💬";
+    font-size:14px;
+  }
+  .btn-view::before{
+    content:"👁️";
+    font-size:14px;
+  }
+
+  @media (max-width:768px){
+    .btn-group{
+      flex-direction:column !important;
+      width:100% !important;
+      padding:0 10px !important;
+      box-sizing:border-box !important;
+    }
+    .btn-view, .btn-quote{
+      width:100% !important;
+      justify-content:center !important;
+      padding:14px 20px !important;
+      font-size:14px !important;
+      border-radius:14px !important;
+      border:2px solid !important;
+    }
+    .btn-view{
+      background:white !important;
+      color:#0f172a !important;
+      border-color:#0f172a !important;
+      box-shadow:0 4px 14px rgba(0,0,0,0.12) !important;
+    }
+    .btn-quote{
+      background:linear-gradient(90deg, #16a34a, #15803d) !important;
+      border-color:#16a34a !important;
+      color:white !important;
+      box-shadow:0 6px 18px rgba(22,163,74,0.3) !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <nav style="background: black; padding: 10px 20px; display: flex; align-items: center; margin-top: -60px;">
+  <img src="/imagess/logo2.jpg" alt="JSONZ Logo" style="height: 45px; width: auto; border-radius: 10px;">
+</nav>
+
+    <!-- Hamburger Button -->
+    <button class="menu-btn" id="menuBtn">
+      ☰
+    </button>
+
+    <!-- Right Side Links -->
+    <ul class="nav-links" id="navLinks">
+      <li><a href="home-page.html"><div style="color: coral;"> Home</div></a></li>
+      <li><a href="HDPE.html">HDPE Pipes</li></a> 
+      <li><a href="UPVC.html"> UPVC pipes</li></a>
+       <li><a href="pprc.html"> PPRC Pipes</li></a>
+       <li><a href="GI-pipes.html">GI Pipes & Fittings</a></li>
+      <li><a href="buttfussion.html">Butt Fusion Machines</a></li>
+       <li><a href="valves.html">Valves</a></li>
+    </ul>
+
+  </nav>
+
+   <main class="main-section"> 
+  <main class="main1">
+    <section class="my-5 text-center  rounded-pill mx-auto ">
+
+        <h1>Advanced <span style="color: #f17116;;" > Piping</span> Solutions <br> for Modern Projects <br> <h1>
+
+          <p  class="lead mt- mb-5 text-gray-50" id="para">Reliable <span style="color: #f17116;"> HDPE UPVC PPRC</span>  & <span style="color: #f17116 ;">GI</span> piping solutions for residential, <br> commercial, and industrial projects.</p>
+
+
+
+
+<!-- BUTTONS USE KARNE KA TAREEKA - HAR PRODUCT KE NEECHE LAGAO -->
+<div class="btn-group">
+  <a href="products.html" class="btn-view">View Products</a>
+  <a href="https://wa.me/923456264638?text=Get%20Quote%20Gilgit" class="btn-quote">Get Quote</a>
+</div>
+
+
+
+
+
+
+           </div>
+           <div class="sassland1">ISO Certified  <span style="color: #f17116;margin-left: 2px; margin-right: 2px;"> 50+ </span> Years Warranty </div>
+
+         </div>
+<div class="mx-auto position-relative overflow-hidden d-block" 
+     style="width: 90%; max-width: 800px; border-radius: 25px;">
+
+  <img src="/imagess/piping p.jpeg" alt="JSONZ Pipes" 
+       class="w-100 img-fluid d-block" 
+       style="border-radius: 25px; object-fit: cover;">
+ 
+  <div class="position-absolute bottom-0 start-0 m-3">
+    <span class="badge px-3 py-2 fw-normal" 
+          style="background-color: #f48a5a; border-radius: 8px; font-size: 14px;">
+      Prosparity with Clarity
+    </span>
+  </div>
+
+</div>
+
+
+
+  </div>
+ 
+
+
+<h1 class="my-heading text-center mt-5">Why Chosse <span style="color: #f17116;">JSONZ </span> Piping Solutions?</h1>
+
+<p class="my-text text-center">
+  We Don't Just Provide Pipes, We Deliver Long-Lasting Quality, <br>Reliability And Peace Of Mind For Every Project.
+</p>
+
+
+
+<div class="container">
+  <div class="row g-4">
+
+    <!-- Card 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 class="text-start">High Durability</h3>
+        <p class="text-start">Built to last for decades. Our pipes withstand high pressure, extreme temperatures, and heavy loads without cracking.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-droplet-slash"></i></div>
+        <h3 class="text-start">100% Leak-Proof</h3>
+        <p class="text-start">Advanced jointing technology ensures zero leakage, saving water and maintenance cost for residential & commercial projects.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-bolt"></i> <i class="fa-solid fa-ban"></i></div>
+        <h3 class="text-start">Corrosion & Rust Free</h3>
+        <p class="text-start">Unlike metal pipes, our HDPE, PVC & PPR pipes never rust, corrode or scale. Perfect for Pakistan's weather.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3 class="text-start">Easy & Fast Installation</h3>
+        <p class="text-start">Lightweight design and simple jointing system reduce installation time by 50% and labor cost.</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-coins"></i></div>
+        <h3 class="text-start">Cost-Effective Solution</h3>
+        <p class="text-start">Long life + Zero maintenance = Lifetime savings. One-time investment for 50+ years.</p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="feature-card">
+        <div class="icon-box"><i class="fa-solid fa-award"></i></div>
+        <h3 class="text-start">Certified Quality</h3>
+        <p class="text-start">ISO Certified, PSI tested and approved for all residential, commercial, and industrial projects across Pakistan.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHY CHOOSE US - Ab bilkul iske neeche aayega -->
+ <!-- <div class="p-3 mb-2 bg-body-secondary"> -->
+  <main class="mainn">
+    <section class="my-5 text-center  rounded-pill mx-auto ">
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold" style="color: #f17116;">Why Choose Us?</h2>
+    <p class="text-mute" style="color: olive;">Trusted for 20 Years</p>
+  </div>
+    <div class="row g-3 text-center">
+    <div class="col-6 col-md-3"><div class="p-3 border rounded-4 shadow-sm bg-white h-100"><h6 style="font-weight: bold; font-family: inherit">🏆 20 Years Exp.</h6>For over 20 years, JSONZ Pipes has been Gilgit Baltistan's most trusted name. We have completed 5000+ projects in homes, factories and housing societies.</div></div>
+    <div class="col-6 col-md-3"><div class="p-3 border rounded-4 shadow-sm bg-white h-100"><h6 style="font-weight: bold; font-family: inherit;">✅ Best Quality</h6>We never compromise on quality. All our pipes are ISO Certified, PSI Tested and made from 100% pure material. Guaranteed for 50+ years.</div></div>
+    <div class="col-6 col-md-3"><div class="p-3 border rounded-4 shadow-sm bg-white h-100"><h6 style="font-weight: bold; font-family: inherit;"> 💰 Best Price</h6> Direct from factory to you. No middleman, no extra commission. That is why we give you the best market price with premium quality.</div></div>
+    <div class="col-6 col-md-3" ><div class="p-3 border rounded-4 shadow-sm bg-white h-100"><h6 style="font-weight: bold; font-family: inherit;">🚚 Fast Delivery</h6>We deliver anywhere in Gilgit Baltistan. Ghizer, Hunza, Skardu, Astore, Nagir & Diamer District - your order will reach you safely and on time, within 24 to 48 hours.</div></div>
+  </div>
+</div>
+
+</div> <!-- hero ka div close -->
+</div>
+</div>
+<!-- </main>
+</div>
+</section>  -->
+-------------------------------------
+<div id="hello">
+
+<!-- ======= JSONZ Products Section - DARK PREMIUM ======= -->
+<div style="width:100%; display:block; clear:both;"></div>
+
+<section style="width:100%; display:block; background:#271e17; padding:80px 0; clear:both; border-radius: 1em;">
+  <div class="container" style="max-width:1200px; margin:auto; padding:0 15px;">
+    <div class="text-center mb-5">
+      <h2 style="font-weight:800; font-size:34px; color:#FFFFFF;">Our Best Selling Pipes</h2>
+      <p style="color:#94A3B8;">Trusted for 20 Years in Gilgit Baltistan</p>
+    </div>
+
+    <div class="row g-4" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+      
+      <!-- 1. HDPE -->
+      <div style="width:260px; background:#151E32; border:1px solid #1E293B; border-radius:16px; padding:20px; text-align:center;">
+         <h2 style="color: white;">POPULAR</h2>
+        <h5 style="font-weight:700; color:white;">HDPE Pipe <span style="background:#16A34A; color:white; font-size:9px; padding:3px 7px;
+         border-radius:20px; vertical-align:middle;">100% Food Grade</span></h5>
+        <p style="font-size:13px; color:#94A3B8;">For water supply. 50+ years life.</p>
+        <a href="HDPE.html" style="background:#F9A825; padding:10px; display:block; text-decoration:none; color:black; border-radius:8px; font-weight:700; margin-top:15px;">View Details</a>
+      </div>
+
+      <!-- 2. PVC -->
+      <div style="width:260px; background:#151E32; border:1px solid #1E293B; border-radius:16px; padding:20px; text-align:center;">
+        <H2 style="color: white;">POPULAR</H2>
+        <h5 style="font-weight:700; color:white;">UPVC Pipe</h5>
+        <p style="font-size:13px; color:#94A3B8;">For drainage & sewerage system.</p>
+        <a href="UPVC.html" style="background:#FFFFFF; padding:10px; display:block; text-decoration:none; color:black; border-radius:8px; font-weight:700; margin-top:15px;">View Details</a>
+      </div>
+
+      <!-- 3. PPR -->
+      <div style="width:260px; background:#151E32; border:1px solid #1E293B; border-radius:16px; padding:20px; text-align:center;">
+        <h2 style="color: white;">POPULAR & iil</h2>
+        <h5 style="font-weight:700; color:white;">PPRC Pipe <span style="background:#16A34A; color:white; font-size:9px; padding:3px 7px; border-radius:20px; vertical-align:middle;">100% Food Grade</span></h5>
+        <p style="font-size:13px; color:#94A3B8;">For hot & cold drinking water.</p>
+        <a href="pprc.html" style="background:#F9A825; padding:10px; display:block; text-decoration:none; color:black; border-radius:8px; font-weight:700; margin-top:15px;">View Details</a>
+      </div>
+
+      <!-- 4. GI -->
+      <div style="width:260px; background:#151E32; border:1px solid #1E293B; border-radius:16px; padding:20px; text-align:center;">
+        <h2 style="color: white;"> <abbr title="International Industries Limited">IIL</abbr></h2>
+        <h5 style="font-weight:700; color:white;"> GI Pipes & Fittings</h5>
+        <p style="font-size:13px; color:#94A3B8;"> Heavy duty iron pipe for construction. <br> </p>
+        <a href="GI-pipes.html" style="background:#FFFFFF; padding:10px; display:block; text-decoration:none; color:black; border-radius:8px; font-weight:700; margin-top:15px;">View Details</a>
+        </div>
+
+        <!-- ===== 5th Card - Hydroplast Distributor ===== -->
+<div style="background:linear-gradient(135deg, #151E32, #1E3A8A); border:2px solid #F9A825; border-radius:16px; padding:20px; min-width:250px; flex:1;">
+  <span style="background:#F9A825; color:#0B1120; padding:4px 10px; border-radius:20px; font-size:10px; font-weight:900;">OFFICIAL DISTRIBUTOR</span>
+  <h3 style="color:white; margin:12px 0 5px 0; font-weight:900; font-size:20px;">HYDROPLAST<br>FITTINGS</h3>
+  <p style="color:#93C5FD; font-size:13px; margin:0 0 15px 0;">All Size HDPE Fittings Available</p>
+  
+  <img src="/imagess/hydroplast logo.jpg" style="width:100%; border-radius:10px; margin-bottom:15px;">
+
+  <a href="hydroplast.html" style="background:#F9A825; color:#0B1120; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center;">
+    View Fittings Stock →
+  </a>
+</div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- ======= JSONZ CTA Banner - Before Footer ======= -->
+<section style="background:#F9A825; padding:45px 20px; margin:10rem 15px 0 15px; border-radius:20px;">
+  <div style="max-width:1100px; margin:auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;">
+    
+    <div style="flex:1; min-width:280px;">
+      <h2 style="font-weight:900; font-size:28px; color:#0B1120; margin:0 0 8px 0; line-height:1.2;">
+        Need Pipes for Your Project?<br>Get Best Rate in 10 Minutes
+      </h2>
+      <p style="color:#1F2937; font-size:14px; margin:0; font-weight:500;">
+        Gilgit Baltistan me delivery available - HDPE, UPVC, PPRC & GI pipes.
+      </p>
+    </div>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="https://wa.me/923456264638" target="_blank" style="background:#0B1120; color:white; padding:14px 28px; border-radius:10px; text-decoration:none; font-weight:700; font-size:15px; display:inline-block;">
+        WhatsApp Now
+      </a>
+      <a href="tel:+923456264638" style="background:white; color:#0B1120; padding:14px 28px; border-radius:10px; text-decoration:none; font-weight:700; font-size:15px; display:inline-block; border:1px solid #0B1120;">
+        Call Now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Iske baad tumhara Footer ayega -->
+ <!-- ======= JSONZ FOOTER - Final ======= -->
+<footer style="background:#060A14; padding:60px 20px 20px 20px; margin-top:8rem; border-top:1px solid #1E293B;">
+  <div style="max-width:1150px; margin:auto; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between;">
+    
+    <!-- 1. Logo & About -->
+    <div style="flex:1.5; min-width:280px;">
+      <h2 style="color:white; font-weight:900; font-size:26px; margin:0;">JSONZ<span style="color:#F9A825;"></span></h2>
+      <p style="color:#94A3B8; font-size:13px; margin-top:12px; line-height:1.7;">
+        20 years of trust in Gilgit Baltistan. We provide best quality HDPE, UPVC, PPRC & GI Pipes for all your construction needs. Delivery available across GB.
+      </p>
+      <div style="margin-top:15px; display:flex; gap:10px;">
+        <a href="#" style="width:36px; height:36px; background:#151E32; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;">f</a>
+        <a href="#" style="width:36px; height:36px; background:#151E32; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;">in</a>
+        <a href="https://wa.me/923456264638" style="width:36px; height:36px; background:#F9A825; border-radius:8px; display:flex; align-items:center; justify-content:center; color:black; text-decoration:none; font-weight:bold;">W</a>
+      </div>
+    </div>
+
+    <!-- 2. Quick Links -->
+    <div style="flex:1; min-width:150px;">
+      <h4 style="color:white; font-weight:700; font-size:15px; margin-bottom:15px;">Quick Links</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin-bottom:10px;"><a href="home-page.html" style="color:#94A3B8; text-decoration:none; font-size:14px;">Home</a></li>
+
+        <li style="margin-bottom:10px;"><a href="ourgellery.html" style="color:#94A3B8; text-decoration:none; font-size:14px;">Our Gallery</a></li>
+        <li style="margin-bottom:10px;"><a href="aboutus.html" style="color:#94A3B8; text-decoration:none; font-size:14px;">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- 3. Contact -->
+    <div style="flex:1; min-width:200px;">
+      <h4 style="color:white; font-weight:700; font-size:15px; margin-bottom:15px;">Contact Us</h4>
+      <p style="color:#94A3B8; font-size:14px; margin:5px 0;">📍 SHAHRA-E-QUID-E AZAM Zulfiqar Abad , Gilgit</p>
+      <p style="color:#94A3B8; font-size:14px; margin:5px 0;">📞 03456264638</p>
+      <p style="color:#94A3B8; font-size:14px; margin:5px 0;">✉️ jsonz.pipes@gmail.com</p>
+      <p style="color:#F9A825; font-size:13px; margin-top:10px; font-weight:600;">Open: 9am - 8pm Daily</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Copyright -->
+  <div style="max-width:1150px; margin:40px auto 0 auto; padding-top:20px; border-top:1px solid #151E32; text-align:center;">
+    <p style="color:#64748B; font-size:12px; margin:0;">© 2026 JSONZ Pipes Gilgit. All Rights Reserved. | Made in Gilgit Baltistan</p>
+  </div>
+  <!-- DEVELOPER CREDIT - PROFESSIONAL & SMALL - J SONS TRADERS -->
+<div style="background:#0f172a; border-top:1px solid #1e293b; padding:12px 20px; text-align:center; font-family:Inter,sans-serif;">
+  
+  <p style="font-size:11px; color:#94a3b8; margin:0; letter-spacing:0.3px;">
+    Website Designed & Developed with ❤️ by 
+    <a href="https://wa.me/923554397996" target="_blank" style="color:#facc15; font-weight:800; text-decoration:none; border-bottom:1px dashed #facc15; padding-bottom:1px;">
+      [ Zubair Ahmad ] - Web Developer Gilgit
+    </a>
+    <span style="margin:0 8px; color:#334155;">|</span>
+    <span style="color:#cbd5e1;">Need a Website for Your Shop? 
+      <br><br>
+      <a href="https://wa.me/923554397996?text=Hellow%20Brother%20i%20need%20a%20%20responsive%20website%20%20" target="_blank" style="background:#facc15; color:black; padding:2px 10px; border-radius:20px; font-size:10px; font-weight:900; text-decoration:none; margin-left:4px;">
+      Contact Me →
+      </a>
+    </span>
+  </p>
+
+</div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
