@@ -130,8 +130,11 @@ h2{
 * { margin: 0;
    padding: 0;
     box-sizing: border-box; }
-html, body { width: 100%; overflow-x: hidden; }
-body { font-family: Arial, sans-serif; padding-top: 65px; background: #fff; }
+html, body { width: 100%;
+   overflow-x: hidden; }
+body { font-family: Arial, sans-serif; 
+  padding-top: 65px; 
+  background: #fff; }
 
 /* ===== NAVBAR - 100% MOBILE FIX ===== */
 .navbar {
@@ -150,6 +153,7 @@ body { font-family: Arial, sans-serif; padding-top: 65px; background: #fff; }
 .nav-links {
   display: none; position: absolute; top: 65px; left: 0;
   width: 100%; background: #1a1a1a; list-style: none; flex-direction: column;
+  z-index: 9999 !important;
 }
 .nav-links.active { display: flex; }
 .nav-links a { display: block; padding: 15px; color: white; text-decoration: none; text-align: center; border-bottom: 1px solid #2a2a2a; }
@@ -171,8 +175,24 @@ body { font-family: Arial, sans-serif; padding-top: 65px; background: #fff; }
 .hero-section .lead span { color: #f17116; font-weight: 700; }
 
 .btn-group { display: flex; gap: 12px; justify-content: center; margin: 20px 0; flex-wrap: wrap; }
-.btn-view { background: white; color: #0a0a0a; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; }
-.btn-quote { background: #16a34a; color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; }
+.btn-view { background: white;
+   color: #0a0a0a; 
+   padding: 12px 24px;
+    border-radius: 50px;
+     text-decoration: none;
+      font-weight: 700;
+      z-index: 1;
+    
+    }
+.btn-quote { background: #16a34a; 
+  color: white;
+   padding: 12px 24px; 
+   border-radius: 50px; 
+   text-decoration: none; 
+   font-weight: 700; 
+   z-index: 1;
+  
+  }
 
 .sassland1 { color: white; background: #2a2312; width: fit-content; margin: 15px auto; padding: 8px 20px; border-radius: 20px; font-size: 14px; }
 .sassland1 span { color: #f17116; margin: 0 4px; }
