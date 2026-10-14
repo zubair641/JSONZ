@@ -1,132 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
 
-body {
-  font-family: Arial, sans-serif;
-}
-
-
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  padding-top: 65px; /* YE LINE SAB SE IMPORTANT HAI - Hero ko navbar se chipkayegi */
-}
-
-
-
-.logo img {
-  height: 45px;
-  width: auto;
-  border-radius: 10px;
-  margin-top: -1px;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-/* Mobile menu */
-.nav-links {
-  display: none;
-  position: absolute;
-  top: 65px;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  list-style: none;
-}
-
-.nav-links li {
-  text-align: center;
-}
-
-.nav-links a {
-  display: block;
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links.active {
-  display: block;
-}
-
-.hero {
-  margin-top: 0; /* Mobile pe ab gap nahi aayega */
-  background: white;
-  min-height: 400px;
-}
-
-@media (min-width: 768px) {
-  .menu-btn {
-    display: none;
-  }
-  .nav-links {
-    display: flex;
-    position: static;
-    width: auto;
-    background: none;
-    gap: 25px;
-  }
-  .nav-links a {
-    padding: 8px;
-  }
-  .nav-links a:hover {
-    color: #8b551f;
-  }
-}
-
-
-
-
-
-
-h2{
-    font-family: serif;
-    font-style: oblique;
-    /* margin-top: -10px; */
-    
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       /* ===== RESET ===== */
 * { margin: 0;
    padding: 0;
     box-sizing: border-box; }
@@ -148,7 +20,9 @@ body { font-family: Arial, sans-serif;
 { height: 45px;
    width: auto; 
    border-radius: 8px;
-    display: block; }
+    display: block; 
+     margin-top: -1px;
+  }
 .menu-btn { background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
 .nav-links {
   display: none; position: absolute; top: 65px; left: 0;
