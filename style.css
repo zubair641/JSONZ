@@ -427,15 +427,15 @@ body { font-family: Arial, sans-serif;
     }
     
 
-  .w-75 { width: 75% !important; }
+  /* .w-75 { width: 75% !important; }
   @media (min-width: 768px) {
     .w-md-50 { width: 50% !important; }
   }
     .my-heading {
     color: black !important;
-  }
+  } */
 
-  .my-heading, .my-text {
+  /* .my-heading, .my-text {
     color: black !important;
   }
 
@@ -454,6 +454,7 @@ body { font-family: Arial, sans-serif;
   #hello{
     margin-top: 15rem;
   }
+ 
  
  
 
