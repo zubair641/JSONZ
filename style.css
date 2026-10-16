@@ -285,8 +285,8 @@ body { font-family: Arial, sans-serif;
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .container{
-      margin-top: 50px;
+    .container h1 p{
+      margin-top: 50px !important;
     
     }
    
@@ -409,12 +409,15 @@ body { font-family: Arial, sans-serif;
     display: flex;
     margin-top: 80px;
   }
+
+
   footer {
 
   margin-bottom: 0 !important;
   position: relative !important;
   bottom: -95px !important;
 }
+
 
  
  
