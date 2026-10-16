@@ -70,7 +70,7 @@ body { font-family: Arial, sans-serif;
 
 
 /* ===== HERO SECTION - NO GAP ===== */
-.main1 { background: #221a14; padding: 30px 15px 50px 15px; }
+.main1 { background: #221a14; padding: 30px 0px 0px 0px; }
 .hero-section h1 { color: white; font-weight: 650; font-size: 32px; line-height: 1.2; margin-top: 30px; }
 .hero-section h1 span { color: #f17116; }
 .hero-section .lead { color: #ccc; font-size: 16px; margin-top: 25px; }
@@ -132,34 +132,6 @@ body { font-family: Arial, sans-serif;
 .my-heading span {
   color: #f17116 !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -441,7 +413,7 @@ body { font-family: Arial, sans-serif;
 
   margin-bottom: 0 !important;
   position: relative !important;
-  bottom: -200px !important;
+  bottom: -95px !important;
 }
 
  
